@@ -1,0 +1,32 @@
+<div class="container" id="table">
+  
+    
+      <select class="form-control" (change)="capturar($event)" >
+        <option disabled>JORNADA</option>
+        <option value="MORNING">Mañana</option>
+        <option value="AFTERNOON">Tarde</option>
+        <option value="NIGHT">Noche</option>
+        <option value="WEEKEND">Fin de semana</option>
+      </select>
+    
+
+    <div class="table-responsive-sm" style="height: 100%" style="width: 100%">
+      <table class="table table-dark">
+        <thead>
+          <tr class="text-center">
+            <th>DOCUMENTO</th>
+            <th>NOMBRES</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let apprentice of apprentices" class="text-center">
+            <td (click)="Edit(apprentice)">{{ apprentice.document }}</td>
+            <td>{{ apprentice.name }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  
+</div>
+
+
