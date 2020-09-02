@@ -1,0 +1,72 @@
+<div class="container">
+  
+    
+    <div class="row">
+        
+        <div class="col-md-4" >
+            <div class="card text-white bg-dark mb-3" style="height: 25rem;"style="margin-top: 0px;" >
+              <div class="card-header"><h4>Datos del aprendiz</h4></div>
+              <div class="card-body">
+                <h5 class="card-title">Edad: {{ apprentice.age }}</h5>
+                <h5 class="card-title">Estatura: {{ apprentice.height }}m</h5>
+                <h5 class="card-title">Peso: {{ apprentice.weight }} kg</h5>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-8">
+            <div class="card text-white bg-dark mb-1" style="max-width: 45rem" >
+              <div class="card-header"><h3>Limitaciones</h3></div>
+              <div class="card-body">
+                <h5 class="card-title">{{ apprentice.limitations }}</h5>
+              </div>
+            </div>
+          </div>
+     
+      <div class="col-md-8">
+        <div class="card text-white bg-dark mb-3" style="max-width: 45rem">
+          <div class="card-header"><h3>Comentarios</h3></div>
+          <div class="card-body">
+            <h5 class="card-title">{{ apprentice.comments }}</h5>
+          </div>
+        </div>
+      </div>
+
+      
+     
+
+      
+
+      
+    </div>
+ 
+
+  <div class="card">
+    <div class="card-header">
+      <h3>informacion de rutinas:</h3>
+    </div>
+    <div class="card-body">
+      <form action="">
+        <div class="form-group">
+          <label for="">Nombres:</label>
+          <input
+            value="{{ apprentice.name }}"
+            name="name"
+            type="text"
+            class="form-control"
+          />
+        </div>
+        <div class="form-group">
+          <label for="">Docuemnto:</label>
+          <input
+            value="{{ apprentice.document }}"
+            name="name"
+            type="text"
+            class="form-control"
+          />
+        </div>
+        <button>Actualizar</button>
+      </form>
+    </div>
+  </div>
+</div>
