@@ -1,7 +1,16 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { SearchComponent } from './routines/search/search.component';
+import { AddComponent } from './routines/add/add.component';
+import { EditComponent } from './routines/edit/edit.component';
+import {InitComponent} from './init/init.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {path:'search' , component:SearchComponent},
+  {path:'add', component:AddComponent},
+  {path:'edit', component:EditComponent},
+  {path:'init', component:InitComponent}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
