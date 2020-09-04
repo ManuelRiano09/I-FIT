@@ -35,7 +35,6 @@ public class InstructorService extends MainService {
     }
 
     public Apprentice updateRoutine(Apprentice apprentice){
-
         apprenticeReposiroty.save(apprentice);
         return apprentice;
     }

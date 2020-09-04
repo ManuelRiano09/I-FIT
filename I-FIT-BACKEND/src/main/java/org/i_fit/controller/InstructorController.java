@@ -15,17 +15,19 @@ public class InstructorController {
     @Autowired
     private InstructorService instructorService;
 
+
+
     @GetMapping("/apprenticedata")
     public List<Apprentice> getInfoForInstructor(@RequestParam String journey){
         return instructorService.getInfoForInstructor(journey);
     }
 
-
-    @PutMapping("/apprenticedata")
-    public Apprentice updateRoutine(@RequestBody Apprentice apprentice, int id){
-        apprentice.setDocument(id);
-        return instructorService.updateRoutine(apprentice);
+    @PutMapping("/saveroutine")
+    public void updateRoutine(@RequestBody Apprentice apprentice){
+        instructorService.updateRoutine(apprentice);
     }
+
+
 //    @GetMapping("/test")
 //    public String test1(){
 //        Apprentice apprentice = new Apprentice();
