@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/I_FIT")
@@ -16,15 +15,19 @@ public class InstructorController {
     @Autowired
     private InstructorService instructorService;
 
+
+
     @GetMapping("/apprenticedata")
     public List<Apprentice> getInfoForInstructor(@RequestParam String journey){
         return instructorService.getInfoForInstructor(journey);
     }
 
-    @GetMapping(path = {"/{id}"})
-    public Optional<Apprentice> searchId(@PathVariable("id")int id){
-        return instructorService.searchId(id);
+    @PutMapping("/saveroutine")
+    public void updateRoutine(@RequestBody Apprentice apprentice){
+        instructorService.updateRoutine(apprentice);
     }
+
+
 //    @GetMapping("/test")
 //    public String test1(){
 //        Apprentice apprentice = new Apprentice();
