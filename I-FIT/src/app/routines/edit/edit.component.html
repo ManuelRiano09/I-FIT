@@ -1,72 +1,242 @@
-<div class="container">
-  
-    
-    <div class="row">
-        
-        <div class="col-md-4" >
-            <div class="card text-white bg-dark mb-3" style="height: 25rem;"style="margin-top: 0px;" >
-              <div class="card-header"><h4>Datos del aprendiz</h4></div>
-              <div class="card-body">
-                <h5 class="card-title">Edad: {{ apprentice.age }}</h5>
-                <h5 class="card-title">Estatura: {{ apprentice.height }}m</h5>
-                <h5 class="card-title">Peso: {{ apprentice.weight }} kg</h5>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-8">
-            <div class="card text-white bg-dark mb-1" style="max-width: 45rem" >
-              <div class="card-header"><h3>Limitaciones</h3></div>
-              <div class="card-body">
-                <h5 class="card-title">{{ apprentice.limitations }}</h5>
-              </div>
-            </div>
-          </div>
-     
-      <div class="col-md-8">
-        <div class="card text-white bg-dark mb-3" style="max-width: 45rem">
-          <div class="card-header"><h3>Comentarios</h3></div>
-          <div class="card-body">
-            <h5 class="card-title">{{ apprentice.comments }}</h5>
-          </div>
+<div class="container" style="margin-top: 75px">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card text-white bg-dark mb-1" style="height: 25rem" style="margin-top: 0px">
+        <div class="card-header">
+          <h4>Datos del aprendiz</h4>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Nombre: {{ apprentice.name }}</h5>
+          <h5 class="card-title">Edad: {{ apprentice.age }}</h5>
+          <h5 class="card-title">Estatura: {{ apprentice.height }}m</h5>
+          <h5 class="card-title">Peso: {{ apprentice.weight }} kg</h5>
         </div>
       </div>
-
-      
-     
-
-      
-
-      
     </div>
- 
 
+    <div class="col-md-8">
+      <div class="card text-white bg-dark mb-1" style="max-width: 56rem">
+        <div class="card-header">
+          <h3>Comentarios</h3>
+        </div>
+        <div class="card-body">
+          <h6 class="card-title">{{ apprentice.comments }}</h6>
+          <br />
+          <h4>Limitaciones</h4>
+          <h6>{{ apprentice.limitations }}</h6>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
   <div class="card">
-    <div class="card-header">
-      <h3>informacion de rutinas:</h3>
+    <div class="card-header" style="text-align: center">
+      <h3>Rutina:</h3>
     </div>
     <div class="card-body">
-      <form action="">
-        <div class="form-group">
-          <label for="">Nombres:</label>
-          <input
-            value="{{ apprentice.name }}"
-            name="name"
-            type="text"
-            class="form-control"
-          />
+
+      <div class="container">
+        <div class="row">
+          <div class="col-sm">
+            <p>
+              <!--ejercicio 1 ////////////////////////////////////////// -->
+              <button class="btn btn-dark col-md-12" type="button" data-toggle="collapse" data-target="#exercise1"
+                aria-expanded="false" aria-controls="collapseExample">
+                Ejercicio
+              </button>
+            </p>
+            <div class="collapse" id="exercise1">
+              <div class="card card-body">
+                <form>
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="name1" placeholder="nombre">
+                  </div>
+
+
+                  <div class="card  mb-2">
+                    <div class="card-header">
+                      <select class="custom-select custom-select-sm"  (change)="Repetisiones1($event)">
+                        <option selected disabled>Repetisiones</option>
+                        <option value="4">4</option>
+                        <option value="8">8</option>
+                        <option value="10">10</option>
+                        <option value="12">12</option>
+                        <option value="16">16</option>
+                      </select>
+                    </div>
+                    
+                  </div>
+                  </form>
+                  <form>
+
+                  <div class="card  mb-1" style="height: 25rem" style="margin-top: 0px">
+                    <div class="card-header">
+                      <select class="custom-select custom-select-sm"  (change)="Series1($event)">
+                        <option selected disabled>series</option>
+                        <option value="2">2</option>
+                        <option value="4">4</option>
+                        <option value="6">6</option>
+                        <option value="8">8</option>
+                        <option value="10">10</option>
+                      </select>
+                    </div>
+                    
+                  </div>
+
+                  <div class="form-group">
+                    <label for="exampleFormControlTextarea1"></label>
+                    <textarea class="form-control" id="description1" rows="1"
+                      placeholder="Descripcion"></textarea>
+                  </div>
+                  <select class="custom-select custom-select-sm" (change)="Maquina1($event)">
+                    <option selected disabled>Maquina</option>
+                    <option value="Eliptica">Eliptica</option>
+                    <option value="Caminadora">Caminadora</option>
+                    <option value="Bicicleta">Three</option>
+                  </select>
+                  
+                </form>
+                <br>
+                <button (click)="AddExercise1()" type="button" class="btn btn-warning">Añadir</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm">
+            <p>
+              <!--ejercicio 2 ////////////////////////////////////////// -->
+              <button class="btn btn-dark col-md-12" type="button" data-toggle="collapse" data-target="#exercise2"
+                aria-expanded="false" aria-controls="collapseExample">
+                Ejercicio
+              </button>
+            </p>
+            <div class="collapse" id="exercise2">
+              <div class="card card-body">
+                <form>
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="name2" placeholder="nombre">
+                  </div>
+
+
+                  <div class="card  mb-2">
+                    <div class="card-header">
+                      <select class="custom-select custom-select-sm"  (change)="Repetisiones2($event)">
+                        <option selected disabled>Repetisiones</option>
+                        <option value="4">4</option>
+                        <option value="8">8</option>
+                        <option value="10">10</option>
+                        <option value="12">12</option>
+                        <option value="16">16</option>
+                      </select>
+                    </div>
+                    
+                  </div>
+                  </form>
+                  <form>
+
+                  <div class="card  mb-1" style="height: 25rem" style="margin-top: 0px">
+                    <div class="card-header">
+                      <select class="custom-select custom-select-sm"  (change)="Series2($event)">
+                        <option selected disabled>series</option>
+                        <option value="2">2</option>
+                        <option value="4">4</option>
+                        <option value="6">6</option>
+                        <option value="8">8</option>
+                        <option value="10">10</option>
+                      </select>
+                    </div>
+                    
+                  </div>
+
+                  <div class="form-group">
+                    <label for="exampleFormControlTextarea1"></label>
+                    <textarea class="form-control" id="description2" rows="1"
+                      placeholder="Descripcion"></textarea>
+                  </div>
+                  <select class="custom-select custom-select-sm" (change)="Maquina2($event)">
+                    <option selected disabled>Maquina</option>
+                    <option value="Eliptica">Eliptica</option>
+                    <option value="Caminadora">Caminadora</option>
+                    <option value="Bicicleta">Three</option>
+                  </select>
+                  
+                </form>
+                <br>
+                <button (click)="AddExercise2()" type="button" class="btn btn-warning">Añadir</button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-sm">
+            <p>
+              <!--ejercicio 3 ////////////////////////////////////////// -->
+              <button class="btn btn-dark col-md-12" type="button" data-toggle="collapse" data-target="#exercise1"
+                aria-expanded="false" aria-controls="collapseExample">
+                Ejercicio
+              </button>
+            </p>
+            <div class="collapse" id="exercise1">
+              <div class="card card-body">
+                <form>
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="name1" placeholder="nombre">
+                  </div>
+
+
+                  <div class="card  mb-2">
+                    <div class="card-header">
+                      <select class="custom-select custom-select-sm"  (change)="Repetisiones1($event)">
+                        <option selected disabled>Repetisiones</option>
+                        <option value="4">4</option>
+                        <option value="8">8</option>
+                        <option value="10">10</option>
+                        <option value="12">12</option>
+                        <option value="16">16</option>
+                      </select>
+                    </div>
+                    
+                  </div>
+                  </form>
+                  <form>
+
+                  <div class="card  mb-1" style="height: 25rem" style="margin-top: 0px">
+                    <div class="card-header">
+                      <select class="custom-select custom-select-sm"  (change)="Series1($event)">
+                        <option selected disabled>series</option>
+                        <option value="2">2</option>
+                        <option value="4">4</option>
+                        <option value="6">6</option>
+                        <option value="8">8</option>
+                        <option value="10">10</option>
+                      </select>
+                    </div>
+                    
+                  </div>
+
+                  <div class="form-group">
+                    <label for="exampleFormControlTextarea1"></label>
+                    <textarea class="form-control" id="description1" rows="1"
+                      placeholder="Descripcion"></textarea>
+                  </div>
+                  <select class="custom-select custom-select-sm" (change)="Maquina1($event)">
+                    <option selected disabled>Maquina</option>
+                    <option value="Eliptica">Eliptica</option>
+                    <option value="Caminadora">Caminadora</option>
+                    <option value="Bicicleta">Three</option>
+                  </select>
+                  
+                </form>
+                <br>
+                <button (click)="AddExercise1()" type="button" class="btn btn-warning">Añadir</button>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="form-group">
-          <label for="">Docuemnto:</label>
-          <input
-            value="{{ apprentice.document }}"
-            name="name"
-            type="text"
-            class="form-control"
-          />
-        </div>
-        <button>Actualizar</button>
-      </form>
+        
+      </div>
+      <div class="container">
+        <button (click)="AddRoutine()" class="btn btn-warning">Enviar rutina</button>
+      </div>
     </div>
+    
   </div>
 </div>

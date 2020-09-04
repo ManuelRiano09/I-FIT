@@ -17,6 +17,8 @@ export class ServiceService {
 
   Url2='http://localhost:320/I_FIT/apprentice?id=';
 
+  Url3='http://localhost:320/I_FIT/apprentice?apprentice=';
+
   getInfoForInstructor(){
     return this.http.get<Apprentice[]>(this.Url+this.obtainLocalStorage());
   }
@@ -27,5 +29,9 @@ export class ServiceService {
 
   obtainLocalStorage(): string{
     return localStorage.getItem("journey");
+  }
+
+  updateRoutine(apprentice:Apprentice, id: number){
+    return this.http.get<Apprentice>(this.Url3+apprentice+id);
   }
 }

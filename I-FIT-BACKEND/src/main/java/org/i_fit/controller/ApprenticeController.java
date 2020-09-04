@@ -22,6 +22,5 @@ public class ApprenticeController {
     @GetMapping("/apprentice")
     public Optional<Apprentice> getApprenticeData(Integer id){
         return apprenticeService.getApprentice(id);
-
     }
 }

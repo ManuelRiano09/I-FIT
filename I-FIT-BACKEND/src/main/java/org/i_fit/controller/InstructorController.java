@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/I_FIT")
@@ -21,9 +20,11 @@ public class InstructorController {
         return instructorService.getInfoForInstructor(journey);
     }
 
-    @GetMapping(path = {"/{id}"})
-    public Optional<Apprentice> searchId(@PathVariable("id")int id){
-        return instructorService.searchId(id);
+
+    @PutMapping("/apprenticedata")
+    public Apprentice updateRoutine(@RequestBody Apprentice apprentice, int id){
+        apprentice.setDocument(id);
+        return instructorService.updateRoutine(apprentice);
     }
 //    @GetMapping("/test")
 //    public String test1(){
