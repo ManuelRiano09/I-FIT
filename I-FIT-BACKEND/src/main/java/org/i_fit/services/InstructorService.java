@@ -33,4 +33,9 @@ public class InstructorService extends MainService {
     public Optional<Apprentice> searchId(int id){
         return apprenticeReposiroty.findById(id);
     }
+
+    public Apprentice updateRoutine(Apprentice apprentice){
+        apprenticeReposiroty.save(apprentice);
+        return apprentice;
+    }
 }

@@ -14,17 +14,16 @@ export class AppComponent {
 
   }
 
-  ngOnInit(): void {
-    this.Init();
-    
-  }
+//  ngOnInit(): void {
+//    this.Init();
+//  }
 
   Search(){
-    this.router.navigate(["search"]);
+    this.router.navigate(['search']);
   }
 
   Init(){
-    this.router.navigate(["init"]);
+    this.router.navigate(['init']);
   }
 
 
