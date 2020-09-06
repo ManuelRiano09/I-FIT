@@ -26,7 +26,7 @@ export class ServiceService {
   }
 
   updateRoutine(apprentice: Apprentice) {
-    return this.http.put<Apprentice>(this.Url4, apprentice);
+    return this.http.put<any>(this.Url4, apprentice);
   }
 
   getMachines() {

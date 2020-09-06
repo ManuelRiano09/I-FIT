@@ -121,16 +121,13 @@ export class EditComponent implements OnInit {
   AddRoutine() {
     let exercises = [];
     exercises.push(this.exercise1);
-    this.apprentice.routine.exercises = exercises;
-    
-    console.log(this.apprentice);
+    this.apprentice.routine.exercises = exercises ; 
   }
 
   UpdateRoutine() {
     this.AddRoutine();
     this.service.updateRoutine(this.apprentice);
+    console.log(this.apprentice);
     alert('todo ha salido bien');
   }
-
-  
 }
