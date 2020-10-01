@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Apprentice } from '../Modelo/Apprentice';
 import { SearchComponent } from '../routines/search/search.component';
 import { stringify } from '@angular/compiler/src/util';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Machine } from '../Modelo/Machine';
+
 
 @Injectable({
   providedIn: 'root',
@@ -12,10 +13,11 @@ import { Machine } from '../Modelo/Machine';
 export class ServiceService {
   constructor(private http: HttpClient) {}
 
-  Url = 'http://localhost:320/I_FIT/apprenticedata?journey=';
-  Url2 = 'http://localhost:320/I_FIT/apprentice?id=';
-  Url4 = 'http://localhost:320/I_FIT/saveroutine';
-  UrlForMachine = 'http://localhost:320/I_FIT/machines';
+  Url = 'http://localhost:10101/I_FIT/apprenticedata?journey='; // obtain the data by journey (instrcutor)
+  Url2 = 'http://localhost:10101/I_FIT/apprentice?id='; // obtain one apprentice by his document (instructor, apprentice)
+  Url4 = 'http://localhost:10101/I_FIT/saveroutine'; // update one routine (instructor)
+  UrlForMachine = 'http://localhost:10101/I_FIT/machines'; // obtain the machines (instrcutor)
+  Url5 = 'http://localhost:10101/I_FIT/apprenticedata/filter?journey=';
 
   getInfoForInstructor() {
     return this.http.get<Apprentice[]>(this.Url + this.obtainLocalStorage());
@@ -26,14 +28,25 @@ export class ServiceService {
   }
 
   updateRoutine(apprentice: Apprentice) {
-    return this.http.put<Apprentice>(this.Url4, apprentice);
+    console.log(apprentice);
+    const headers = new HttpHeaders().set("Content-Type", "application/json");
+    this.http.put(this.Url4, apprentice, {headers}).subscribe(response => console.log(response),
+    error => console.log("algo fallo"));
   }
 
-  getMachines() {
+  getMachines() { 
     return this.http.get<Machine[]>(this.UrlForMachine);
+  }
+
+  filterByStatus(){
+    return this.http.get<Apprentice[]>(this.Url5 + this.obtainLocalStorage() + '&condition=' + this.obtainStatusStorage());
   }
 
   private obtainLocalStorage(): string {
     return localStorage.getItem('journey');
+  }
+
+  private obtainStatusStorage(): string{
+    return localStorage.getItem('status');
   }
 }
