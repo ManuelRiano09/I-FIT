@@ -1,6 +1,20 @@
-<div class="container" id="table">
-  
+<div class="container" id="principal">
+
+  <nav aria-label="breadcrumb">
     
+    <ol class="breadcrumb">
+      
+      <li class="breadcrumb-item"><button class="btn btn-info btn-sm" (click)="allApprentices()">Todos</button></li>
+      <li class="breadcrumb-item"><button class="btn btn-info btn-sm" id="notFinished" value="Finished"  (click)="notFinishedApprentices()">Rutinas Finalizadas</button></li>
+      <li class="breadcrumb-item"><button class="btn btn-info btn-sm" id="new" value="new" (click)="newApprentices()">Nuevos aprendices</button></li>
+    </ol>
+  </nav>
+
+<div class="container" id="table">
+
+  <br>
+  <br>
+  
       <select class="form-control" (change)="capturar($event)" >
         <option selected disabled>JORNADA</option>
         <option value="MORNING">Mañana</option>
@@ -8,20 +22,62 @@
         <option value="NIGHT">Noche</option>
         <option value="WEEKEND">Fin de semana</option>
       </select>
+
+      
     
 
-    <div class="table-responsive-sm" style="height: 100%" style="width: 100%">
-      <table class="table table-dark">
+    <div *ngIf="all" class="table-responsive-sm" style="height: 100%" style="width: 100%">
+      <table class="table" >
         <thead>
           <tr class="text-center">
             <th>DOCUMENTO</th>
             <th>NOMBRES</th>
+            <th>ESTADO</th>
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let apprentice of apprentices" class="text-center">
             <td (click)="Edit(apprentice)">{{ apprentice.document }}</td>
             <td>{{ apprentice.name }}</td>
+            <td>{{apprentice.routine.status}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div *ngIf="finished" class="table-responsive-sm" style="height: 100%" style="width: 100%">
+      <table class="table table-danger">
+        <thead>
+          <tr class="text-center">
+            <th>DOCUMENTO</th>
+            <th>NOMBRES</th>
+            <th>ESTADO</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let apprentice of apprenticesFinished" class="text-center">
+            <td (click)="Edit(apprentice)">{{ apprentice.document }}</td>
+            <td>{{ apprentice.name }}</td>
+            <td>{{apprentice.routine.status}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div *ngIf="new" class="table-responsive-sm" style="height: 100%" style="width: 100%">
+      <table class="table table-success">
+        <thead>
+          <tr class="text-center">
+            <th>DOCUMENTO</th>
+            <th>NOMBRES</th>
+            <th>ESTADO</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let apprentice of apprenticesNew" class="text-center">
+            <td (click)="Edit(apprentice)">{{ apprentice.document }}</td>
+            <td>{{ apprentice.name }}</td>
+            <td>{{apprentice.routine.status}}</td>
           </tr>
         </tbody>
       </table>
@@ -29,4 +85,4 @@
   
 </div>
 
-
+</div>

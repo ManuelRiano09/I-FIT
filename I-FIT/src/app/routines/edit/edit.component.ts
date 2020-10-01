@@ -34,7 +34,9 @@ export class EditComponent implements OnInit {
   expresionByExercise6 = true;
   sendRoutine = false;
 
-  constructor(private router: Router, private service: ServiceService) { }
+  constructor(private router: Router, private service: ServiceService) {
+    console.log(this.apprentice);
+   }
 
   ngOnInit(): void {
     this.CallInfo();
@@ -58,11 +60,9 @@ export class EditComponent implements OnInit {
     this.machine1.name = this.machine1Name;
 
     this.exercise1.name = (<HTMLInputElement>(
-      document.getElementById('name1')
-    )).value;
+      document.getElementById('name1'))).value;
     this.exercise1.description = (<HTMLInputElement>(
-      document.getElementById('description1')
-    )).value;
+      document.getElementById('description1'))).value;
     this.exercise1.series = this.series1;
     this.exercise1.repetition = this.repetisiones1;
     this.machine1.name = this.machine1Name;
@@ -128,6 +128,6 @@ export class EditComponent implements OnInit {
     this.AddRoutine();
     this.service.updateRoutine(this.apprentice);
     console.log(this.apprentice);
-    alert('todo ha salido bien');
+    
   }
 }
