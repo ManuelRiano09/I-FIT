@@ -34,7 +34,19 @@ public class InstructorService extends MainService {
         return apprenticeReposiroty.findById(id);
     }
 
-    public Apprentice updateRoutine(Apprentice apprentice){
+    public Apprentice updateRoutine(Apprentice apprentice1){
+        Apprentice apprentice = new Apprentice();
+        apprentice.setDocument(apprentice1.getDocument());
+        apprentice.setComments(apprentice1.getComments());
+        apprentice.setName(apprentice1.getName());
+        apprentice.setAge(apprentice1.getAge());
+        apprentice.setEmail(apprentice1.getEmail());
+        apprentice.setHeight(apprentice1.getHeight());
+        apprentice.setJourneyEnum(apprentice1.getJourneyEnum());
+        apprentice.setLimitations(apprentice1.getLimitations());
+        apprentice.setPassword(apprentice1.getPassword());
+        apprentice.setWeight(800);
+        apprentice.setRoutine(apprentice1.getRoutine());
         apprenticeReposiroty.save(apprentice);
         return apprentice;
     }

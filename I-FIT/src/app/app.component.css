@@ -1,4 +1,14 @@
 #navbarTogglerDemo01{
     padding: 10px;
     margin-left: 35px;
+    
+}
+
+#navBar{
+    background-color:#212529;
+    padding: 15px;
+}
+
+#navBar h3,h6{
+    color: white;
 }

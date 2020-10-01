@@ -15,8 +15,6 @@ public class InstructorController {
     @Autowired
     private InstructorService instructorService;
 
-
-
     @GetMapping("/apprenticedata")
     public List<Apprentice> getInfoForInstructor(@RequestParam String journey){
         return instructorService.getInfoForInstructor(journey);
@@ -25,6 +23,13 @@ public class InstructorController {
     @PutMapping("/saveroutine")
     public void updateRoutine(@RequestBody Apprentice apprentice){
         instructorService.updateRoutine(apprentice);
+        System.out.println("OLHA");
+    }
+
+    @GetMapping("/saveroutine")
+    public void updateRoutine2(@RequestBody Apprentice apprentice){
+//        instructorService.updateRoutine(apprentice);
+        System.out.println("OLHA");
     }
 
 
