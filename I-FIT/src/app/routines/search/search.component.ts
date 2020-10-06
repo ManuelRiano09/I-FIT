@@ -72,7 +72,7 @@ export class SearchComponent implements OnInit {
     this.statusSeleccionado = (<HTMLInputElement>(
       document.getElementById('notFinished')
     )).value;
-    console.log(localStorage.getItem('status'));
+
     localStorage.setItem('status', this.statusSeleccionado);
     this.service.filterByStatus().subscribe((data) => {
       this.apprenticesFinished = data;
