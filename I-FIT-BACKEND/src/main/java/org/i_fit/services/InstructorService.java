@@ -3,12 +3,15 @@ package org.i_fit.services;
 import org.i_fit.entities.responseserror.NotFoundJourney;
 import org.i_fit.entities.responsesgym.Apprentice;
 import org.i_fit.entities.responsesgym.Journey;
+import org.i_fit.entities.responsesgym.Routine;
+import org.i_fit.entities.responsesgym.Status;
 import org.i_fit.repositorybd.ApprenticeReposiroty;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 @Service
@@ -35,19 +38,19 @@ public class InstructorService extends MainService {
     }
 
     public Apprentice updateRoutine(Apprentice apprentice1){
-        Apprentice apprentice = new Apprentice();
-        apprentice.setDocument(apprentice1.getDocument());
-        apprentice.setComments(apprentice1.getComments());
-        apprentice.setName(apprentice1.getName());
-        apprentice.setAge(apprentice1.getAge());
-        apprentice.setEmail(apprentice1.getEmail());
-        apprentice.setHeight(apprentice1.getHeight());
-        apprentice.setJourneyEnum(apprentice1.getJourneyEnum());
-        apprentice.setLimitations(apprentice1.getLimitations());
-        apprentice.setPassword(apprentice1.getPassword());
-        apprentice.setWeight(800);
-        apprentice.setRoutine(apprentice1.getRoutine());
-        apprenticeReposiroty.save(apprentice);
-        return apprentice;
+        Routine newRoutine = apprentice1.getRoutine();
+        newRoutine.setStatus(Status.StatusEnum.NOT_FINISHED);
+        apprentice1.setRoutine(newRoutine);
+        return apprenticeReposiroty.save(apprentice1);
+    }
+
+    public List<Apprentice> searchByStatus(String journey, String predicate){
+        List<Apprentice> statusList = getInfoForInstructor(journey); //get list for journey
+        Status.StatusEnum status = Status.StatusEnum.valueOf(predicate.toUpperCase()); // obtain the status
+        Predicate<Apprentice> predicate1 = apprentice -> (apprentice.getRoutine().getStatus() == status); // create predicate whit the status condition
+
+        return statusList.stream()
+                .filter(predicate1)
+                .collect(Collectors.toList());
     }
 }
