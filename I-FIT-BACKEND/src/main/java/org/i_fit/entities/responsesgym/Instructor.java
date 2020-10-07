@@ -8,4 +8,6 @@ public class Instructor {
     private String userName;
     private String password;
     private Journey.JourneyEnum journey;
+
+
 }

@@ -1,8 +1,11 @@
 package org.i_fit.entities.responsesgym;
 
 
+import lombok.ToString;
+
 import java.util.List;
 
+@ToString
 public class Routine {
 
     private Status.StatusEnum status;
@@ -23,5 +26,6 @@ public class Routine {
     public void setExercises(List<Exercise> exercises) {
         this.exercises = exercises;
     }
+
 }
 

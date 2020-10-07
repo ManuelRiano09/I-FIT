@@ -1,5 +1,4 @@
 export class Machine{
-
-    name: String;
-    description: String;
+    name: string;
+    description: string;
 }
