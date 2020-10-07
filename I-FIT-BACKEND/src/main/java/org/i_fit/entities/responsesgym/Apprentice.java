@@ -9,7 +9,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Apprentice {
 
     @Id
-    private Integer document;
+    public Long document;
     private String email;
     private String password;
     private String name;
@@ -20,5 +20,9 @@ public class Apprentice {
     private String comments;
     private String limitations;
     private Routine routine;
+
+
+
+
 
 }

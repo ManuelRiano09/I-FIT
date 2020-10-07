@@ -3,7 +3,13 @@ package org.i_fit.controller;
 import org.i_fit.entities.responsesgym.Apprentice;
 import org.i_fit.services.InstructorService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
@@ -23,14 +29,13 @@ public class InstructorController {
     @PutMapping("/saveroutine")
     public void updateRoutine(@RequestBody Apprentice apprentice){
         instructorService.updateRoutine(apprentice);
-        System.out.println("OLHA");
     }
 
-    @GetMapping("/saveroutine")
-    public void updateRoutine2(@RequestBody Apprentice apprentice){
-//        instructorService.updateRoutine(apprentice);
-        System.out.println("OLHA");
+    @GetMapping("/apprenticedata/filter")
+    public List<Apprentice> filterData(@RequestParam String journey, @RequestParam String condition){
+        return instructorService.searchByStatus(journey, condition);
     }
+
 
 
 //    @GetMapping("/test")
