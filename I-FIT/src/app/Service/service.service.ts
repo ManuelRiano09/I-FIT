@@ -5,6 +5,7 @@ import { SearchComponent } from '../routines/search/search.component';
 import { stringify } from '@angular/compiler/src/util';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Machine } from '../Modelo/Machine';
+import { Exercise } from '../Modelo/Exercise';
 
 
 @Injectable({
@@ -13,18 +14,18 @@ import { Machine } from '../Modelo/Machine';
 export class ServiceService {
   constructor(private http: HttpClient) {}
 
-  Url = 'http://localhost:10101/I_FIT/apprenticedata?journey='; // obtain the data by journey (instrcutor)
-  Url2 = 'http://localhost:10101/I_FIT/apprentice?id='; // obtain one apprentice by his document (instructor, apprentice)
+  Url = 'http://localhost:10101/I_FIT/apprenticedata'; // obtain the data by journey (instrcutor)
+  Url2 = 'http://localhost:10101/I_FIT/apprentice'; // obtain one apprentice by his document (instructor, apprentice)
   Url4 = 'http://localhost:10101/I_FIT/saveroutine'; // update one routine (instructor)
   UrlForMachine = 'http://localhost:10101/I_FIT/machines'; // obtain the machines (instrcutor)
   Url5 = 'http://localhost:10101/I_FIT/apprenticedata/filter?journey=';
 
   getInfoForInstructor() {
-    return this.http.get<Apprentice[]>(this.Url + this.obtainLocalStorage());
+    return this.http.get<Apprentice[]>(this.Url + "?journey=" + this.obtainLocalStorage());
   }
 
   getApprenticeId(id: string) {
-    return this.http.get<Apprentice>(this.Url2 + id);
+    return this.http.get<Apprentice>(this.Url2 + "?id=" + id);
   }
 
   updateRoutine(apprentice: Apprentice) {
@@ -40,6 +41,10 @@ export class ServiceService {
 
   filterByStatus(){
     return this.http.get<Apprentice[]>(this.Url5 + this.obtainLocalStorage() + '&condition=' + this.obtainStatusStorage());
+  }
+
+  obtainExerciseOfApprentice(id: string){
+    return this.http.get<Exercise[]>(this.Url + "/exercise?document=" + id);
   }
 
   private obtainLocalStorage(): string {

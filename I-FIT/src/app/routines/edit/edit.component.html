@@ -1,521 +1,622 @@
-<div class="container" style="margin-top: 75px">
-  <div class="row">
-    <div class="col-md-4">
-      <div class="card text-white bg-dark mb-1" style="height: 25rem" style="margin-top: 0px">
-        <div class="card-header">
-          <h4>Datos del aprendiz</h4>
+<div class="body">
+
+ 
+
+  <div class="container" >
+    <div class="row">
+      <div class="col-sm">
+        
+      </div>
+      <div class="col-sm" style="text-align: center;">
+        <img src="../../../assets/images/user.png" style="width: 220px; margin-top: 10px;" id="logo">
+        <hr>
+  <button (click)="Search()" class="btn btn-warning my-2 my-sm-0" style="margin-right: 35px;">Ver Lista</button>
+
+      </div>
+      <div class="col-sm">
+        
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container" style="padding: 40px;" >
+    
+    <div class="card text-center text-white bg-dark" style="border-top: -10px;">
+      <div class="card-header">
+        <h2>Datos personales del aprendiz<hr></h2>
+        
+      </div>
+      <div class="card-body">
+
+        <div class="row">
+          <div class="col">
+            <h3 class="card-title">Documento: {{ apprentice.document }}</h3>
+            <h3 class="card-title">Nombre: {{ apprentice.name }}</h3>
+
+            <h3 class="card-title">Jornada: {{ apprentice.journeyEnum }}</h3>
+            <h3 class="card-title">Correo: {{ apprentice.email }}</h3>
+
+          </div>
+          <div class="col">
+            <h3 class="card-title">Estatura: {{ apprentice.height }}m</h3>
+            <h3 class="card-title">Peso: {{ apprentice.weight }} kg</h3>
+
+            <h3 class="card-title">Edad: {{ apprentice.age }}</h3>
+          </div>
         </div>
-        <div class="card-body">
-          <h5 class="card-title">Nombre: {{ apprentice.name }}</h5>
-          <h5 class="card-title">Edad: {{ apprentice.age }}</h5>
-          <h5 class="card-title">Estatura: {{ apprentice.height }}m</h5>
-          <h5 class="card-title">Peso: {{ apprentice.weight }} kg</h5>
+
+
+
+      </div>
+
+    </div>
+
+    <br>
+
+    <!--tarjeta comentarios del aprendiz-->
+
+    <div class="card text-center text-white bg-dark">
+      <div class="card-header">
+        <h2>Comentarios del aprendiz</h2>
+        <hr>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col">
+            <h3 class="card-title">Comentarios</h3>
+            <h3 class="card-title">{{ apprentice.comments }}</h3>
+          </div>
+          <div class="col">
+            <h3 class="card-title">Limitaciones</h3>
+            <h3 class="card-title">{{ apprentice.limitations}} </h3>
+          </div>
         </div>
+
+      </div>
+      <div class="card-footer text-muted">
+        
+        
       </div>
     </div>
 
-    <div class="col-md-8">
-      <div class="card text-white bg-dark mb-1" style="max-width: 56rem">
-        <div class="card-header">
-          <h3>Comentarios</h3>
-        </div>
-        <div class="card-body">
-          <h6 class="card-title">{{ apprentice.comments }}</h6>
-          <br />
-          <h4>Limitaciones</h4>
-          <h6>{{ apprentice.limitations }}</h6>
+    <br>
+    <br>
+    <button data-toggle="collapse"
+          data-target="#verRutina" type="button" class="btn btn-success btn-block  " >Historial de rutina</button>
+
+    <br>
+    <br>
+  </div>
+
+         <!-- ver rutina-->
+  
+         <div class="container collapse" id="verRutina" style="margin-bottom: 60px; font-size: larger;">
+
+          <table class="table table-sm">
+            <thead>
+              <tr class="text-center">
+                <th>Ejercicio</th>
+                <th>Series</th>
+                <th>Repeticiones</th>
+                <th>Maquina</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let exercise of exercises" class="text-center" style="font-size: larger;">
+                <td> {{exercise.name}}  </td>
+                <td>{{exercise.series}}</td>
+                <td>{{exercise.repetition}}</td>
+                <td>{{exercise.machineName}}</td>
+              </tr>
+            </tbody>
+          </table>
+  
           
         </div>
-      </div>
-    </div>
+
+ 
+
+
+  <div class="container" id="linea"></div>
+  
+  <div class="container" id="tituloRutina">
+    <h3 >Rutina</h3>
+    <h5>
+      <button *ngIf="expresionByExercise4 " (click)="expresionByExercise4 = !expresionByExercise4"
+        class="btn btn-success btn-sm ">+4</button>
+      <button *ngIf="expresionByExercise5" (click)="!expresionByExercise5 = !expresionByExercise5"
+        class="btn btn-success btn-sm" style="margin-left: 10px;">+5</button>
+      <button *ngIf="expresionByExercise6" (click)="!expresionByExercise6 = !expresionByExercise6"
+        class="btn btn-success btn-sm" style="margin-left: 10px;">+6
+      </button>
+    </h5>
   </div>
-  <br>
-  <div class="card">
-    <div class="card-header" style="text-align: center">
+
+
+  <div id="rutinasContainer" class="container" style="margin-top: -12px;">
+    
+    <div class="container" >
       <div class="container">
-        <div class="row">
-          <div class="col-sm">
 
-          </div>
-          <div class="col-sm">
-            <h3>Rutina:</h3>
-          </div>
-          <div class="col-sm">
-            <button *ngIf="expresionByExercise4" (click)="expresionByExercise4 = !expresionByExercise4"
-              class="btn btn-outline-success btn-sm">+4</button>
-            <button *ngIf="expresionByExercise5" (click)="!expresionByExercise5 = !expresionByExercise5"
-              class="btn btn-outline-success btn-sm" style="margin-left: 5px;">+5</button>
-            <button *ngIf="expresionByExercise6" (click)="!expresionByExercise6 = !expresionByExercise6"
-              class="btn btn-outline-success btn-sm" style="margin-left: 5px;">+6</button>
 
-          </div>
+        <div class="show" id="consejos">
+          <button class="btn btn-link btn-block text-right" type="button" data-toggle="collapse" data-target="#consejos"
+            aria-expanded="false" aria-controls="collapseExample">
+            <h6>X</h6>
+          </button>
+          <h5>
+            CONSEJOS <br>
+          </h5>
+          <p>
+            1. Puedes crear hasta 6 ejercicios <br><br>
+            2. Para habilitar un nuevo ejericio pulsa los botones verdes <br>marcados con el numero respectivo<br><br>
+            3. En el momento que estes conforme con el ejericio pula el boton "añadir" <br><br>
+            4. Pulsa el boton verde al final para enviar la rutina <br>
+            (este solo esta disponible cuando creés el ejericio #1)<br><br>
+
+          </p>
         </div>
+       
       </div>
+     
 
+
+      <br><br>
+      <hr>
+      
     </div>
+
+
     <!-- Excerises //////////////////////////////////////////////////////////////////////77777777-->
 
-    <div class="card-body">
-      <div class="container">
-        <div class="row">
-          <!--ejercicio 1 ////////////////////////////////////////// -->
-          <div class="col-sm">
-            <p>
 
-              <button class="btn btn-dark col-md-12" type="button" data-toggle="collapse" data-target="#exercise1"
-                aria-expanded="false" aria-controls="collapseExample">
-                Ejercicio #1
-              </button>
-            </p>
-            <div class="collapse" id="exercise1">
-              <div class="card card-body">
-                <form>
-                  <div class="form-group">
-                    <input type="text" class="form-control" id="name1" placeholder="nombre">
+    <div class="container">
+      <div class="row">
+        <!--ejercicio 1 ////////////////////////////////////////// -->
+        <div class="col-sm">
+          <p>
+
+            <button class="btn btn-outline-warning col-md-12" type="button" data-toggle="collapse"
+              data-target="#exercise1" aria-expanded="false" aria-controls="collapseExample">
+              Ejercicio #1
+            </button>
+          </p>
+          <div class="collapse" id="exercise1">
+            <div class="card card-body">
+              <form>
+                <div class="form-group">
+                  <input type="text" class="form-control" id="name1" placeholder="nombre">
+                </div>
+
+
+                <div class="card  mb-2">
+                  <div class="card-header">
+                    <select class="custom-select custom-select-sm" (change)="Repetisiones1($event)">
+                      <option selected disabled>Repetisiones</option>
+                      <option value="4">4</option>
+                      <option value="8">8</option>
+                      <option value="10">10</option>
+                      <option value="12">12</option>
+                      <option value="16">16</option>
+                    </select>
                   </div>
 
+                </div>
+              </form>
+              <form>
 
-                  <div class="card  mb-2">
-                    <div class="card-header">
-                      <select class="custom-select custom-select-sm" (change)="Repetisiones1($event)">
-                        <option selected disabled>Repetisiones</option>
-                        <option value="4">4</option>
-                        <option value="8">8</option>
-                        <option value="10">10</option>
-                        <option value="12">12</option>
-                        <option value="16">16</option>
-                      </select>
-                    </div>
-
-                  </div>
-                </form>
-                <form>
-
-                  <div class="card  mb-1" style="height: 25rem" style="margin-top: 0px">
-                    <div class="card-header">
-                      <select class="custom-select custom-select-sm" (change)="Series1($event)">
-                        <option selected disabled>series</option>
-                        <option value="2">2</option>
-                        <option value="4">4</option>
-                        <option value="6">6</option>
-                        <option value="8">8</option>
-                        <option value="10">10</option>
-                      </select>
-                    </div>
-
+                <div class="card  mb-1" style="height: 25rem" style="margin-top: 0px">
+                  <div class="card-header">
+                    <select class="custom-select custom-select-sm" (change)="Series1($event)">
+                      <option selected disabled>series</option>
+                      <option value="2">2</option>
+                      <option value="4">4</option>
+                      <option value="6">6</option>
+                      <option value="8">8</option>
+                      <option value="10">10</option>
+                    </select>
                   </div>
 
-                  <div class="form-group">
-                    <label for="exampleFormControlTextarea1"></label>
-                    <textarea class="form-control" id="description1" rows="1" placeholder="Descripcion"></textarea>
-                  </div>
-                  <select class="custom-select custom-select-sm" (change)="Maquina1($event)">
-                    <option selected disabled>Maquina</option>
-                    <option *ngFor="let machine of machines" value="{{machine.name}}" >{{machine.name}}</option>
-                  </select>
+                </div>
 
-                </form>
-                <br>
-                <button (click)="AddExercise1()" type="button" class="btn btn-warning" data-toggle="modal" data-target="#exerciseAdded">Añadir</button>
-              </div>
+                <div class="form-group">
+                  <label for="exampleFormControlTextarea1"></label>
+                  <textarea class="form-control" id="description1" rows="1" placeholder="Descripcion"></textarea>
+                </div>
+                <select class="custom-select custom-select-sm" (change)="Maquina1($event)">
+                  <option selected disabled>Maquina</option>
+                  <option *ngFor="let machine of machines" value="{{machine.name}}">{{machine.name}}</option>
+                </select>
+
+              </form>
+              <br>
+              <button (click)="AddExercise1()" type="button" class="btn btn-warning" data-toggle="modal"
+                data-target="#exerciseAdded">Añadir</button>
             </div>
           </div>
-          <!--ejercicio 2 ////////////////////////////////////////// -->
-          <div class="col-sm">
-            <p>
+        </div>
+        <!--ejercicio 2 ////////////////////////////////////////// -->
+        <div class="col-sm">
+          <p>
 
-              <button class="btn btn-dark col-md-12" type="button" data-toggle="collapse" data-target="#exercise2"
-                aria-expanded="false" aria-controls="collapseExample">
-                Ejercicio #2
-              </button>
-            </p>
-            <div class="collapse" id="exercise2">
-              <div class="card card-body">
-                <form>
-                  <div class="form-group">
-                    <input type="text" class="form-control" id="name2" placeholder="nombre">
+            <button class="btn btn btn-outline-warning col-md-12" type="button" data-toggle="collapse"
+              data-target="#exercise2" aria-expanded="false" aria-controls="collapseExample">
+              Ejercicio #2
+            </button>
+          </p>
+          <div class="collapse" id="exercise2">
+            <div class="card card-body">
+              <form>
+                <div class="form-group">
+                  <input type="text" class="form-control" id="name2" placeholder="nombre">
+                </div>
+
+
+                <div class="card  mb-2">
+                  <div class="card-header">
+                    <select class="custom-select custom-select-sm" (change)="Repetisiones2($event)">
+                      <option selected disabled>Repetisiones</option>
+                      <option value="4">4</option>
+                      <option value="8">8</option>
+                      <option value="10">10</option>
+                      <option value="12">12</option>
+                      <option value="16">16</option>
+                    </select>
                   </div>
 
+                </div>
+              </form>
+              <form>
 
-                  <div class="card  mb-2">
-                    <div class="card-header">
-                      <select class="custom-select custom-select-sm" (change)="Repetisiones2($event)">
-                        <option selected disabled>Repetisiones</option>
-                        <option value="4">4</option>
-                        <option value="8">8</option>
-                        <option value="10">10</option>
-                        <option value="12">12</option>
-                        <option value="16">16</option>
-                      </select>
-                    </div>
-
+                <div class="card  mb-1" style="height: 25rem" style="margin-top: 0px">
+                  <div class="card-header">
+                    <select class="custom-select custom-select-sm" (change)="Series2($event)">
+                      <option selected disabled>series</option>
+                      <option value="2">2</option>
+                      <option value="4">4</option>
+                      <option value="6">6</option>
+                      <option value="8">8</option>
+                      <option value="10">10</option>
+                    </select>
                   </div>
-                </form>
-                <form>
 
-                  <div class="card  mb-1" style="height: 25rem" style="margin-top: 0px">
-                    <div class="card-header">
-                      <select class="custom-select custom-select-sm" (change)="Series2($event)">
-                        <option selected disabled>series</option>
-                        <option value="2">2</option>
-                        <option value="4">4</option>
-                        <option value="6">6</option>
-                        <option value="8">8</option>
-                        <option value="10">10</option>
-                      </select>
-                    </div>
+                </div>
 
-                  </div>
-               
-                  <div class="form-group">
-                    <label for="exampleFormControlTextarea1"></label>
-                    <textarea class="form-control" id="description2" rows="1" placeholder="Descripcion"></textarea>
-                  </div>
-                  <select  class="custom-select custom-select-sm"  (change)="Maquina2($event)" >
-                    <option selected disabled>Maquina</option>
-                    <option *ngFor="let machine of machines" value="{{machine.name}}" >{{machine.name}}</option>
-                  </select>
+                <div class="form-group">
+                  <label for="exampleFormControlTextarea1"></label>
+                  <textarea class="form-control" id="description2" rows="1" placeholder="Descripcion"></textarea>
+                </div>
+                <select class="custom-select custom-select-sm" (change)="Maquina2($event)">
+                  <option selected disabled>Maquina</option>
+                  <option *ngFor="let machine of machines" value="{{machine.name}}">{{machine.name}}</option>
+                </select>
 
-                </form>
-                <br>
-                <button (click)="AddExercise2()" type="button" class="btn btn-warning" data-toggle="modal" data-target="#exerciseAdded">Añadir</button>
-              </div>
+              </form>
+              <br>
+              <button (click)="AddExercise2()" type="button" class="btn btn-warning" data-toggle="modal"
+                data-target="#exerciseAdded">Añadir</button>
             </div>
           </div>
-          <!--ejercicio 3 ////////////////////////////////////////// -->
-          <div class="col-sm">
-            <p>
+        </div>
+        <!--ejercicio 3 ////////////////////////////////////////// -->
+        <div class="col-sm">
+          <p>
 
-              <button class="btn btn-dark col-md-12" type="button" data-toggle="collapse" data-target="#exercise3"
-                aria-expanded="false" aria-controls="collapseExample">
-                Ejercicio #3
-              </button>
-            </p>
-            <div class="collapse" id="exercise3">
-              <div class="card card-body">
-                <form>
-                  <div class="form-group">
-                    <input type="text" class="form-control" id="name3" placeholder="nombre">
+            <button class="btn btn btn-outline-warning col-md-12" type="button" data-toggle="collapse"
+              data-target="#exercise3" aria-expanded="false" aria-controls="collapseExample">
+              Ejercicio #3
+            </button>
+          </p>
+          <div class="collapse" id="exercise3">
+            <div class="card card-body">
+              <form>
+                <div class="form-group">
+                  <input type="text" class="form-control" id="name3" placeholder="nombre">
+                </div>
+
+
+                <div class="card  mb-2">
+                  <div class="card-header">
+                    <select class="custom-select custom-select-sm" (change)="Repetisiones3($event)">
+                      <option selected disabled>Repetisiones</option>
+                      <option value="4">4</option>
+                      <option value="8">8</option>
+                      <option value="10">10</option>
+                      <option value="12">12</option>
+                      <option value="16">16</option>
+                    </select>
                   </div>
 
+                </div>
+              </form>
+              <form>
 
-                  <div class="card  mb-2">
-                    <div class="card-header">
-                      <select class="custom-select custom-select-sm" (change)="Repetisiones3($event)">
-                        <option selected disabled>Repetisiones</option>
-                        <option value="4">4</option>
-                        <option value="8">8</option>
-                        <option value="10">10</option>
-                        <option value="12">12</option>
-                        <option value="16">16</option>
-                      </select>
-                    </div>
-
-                  </div>
-                </form>
-                <form>
-
-                  <div class="card  mb-1" style="height: 25rem" style="margin-top: 0px">
-                    <div class="card-header">
-                      <select class="custom-select custom-select-sm" (change)="Series3($event)">
-                        <option selected disabled>series</option>
-                        <option value="2">2</option>
-                        <option value="4">4</option>
-                        <option value="6">6</option>
-                        <option value="8">8</option>
-                        <option value="10">10</option>
-                      </select>
-                    </div>
-
+                <div class="card  mb-1" style="height: 25rem" style="margin-top: 0px">
+                  <div class="card-header">
+                    <select class="custom-select custom-select-sm" (change)="Series3($event)">
+                      <option selected disabled>series</option>
+                      <option value="2">2</option>
+                      <option value="4">4</option>
+                      <option value="6">6</option>
+                      <option value="8">8</option>
+                      <option value="10">10</option>
+                    </select>
                   </div>
 
-                  <div class="form-group">
-                    <label for="exampleFormControlTextarea1"></label>
-                    <textarea class="form-control" id="description3" rows="1" placeholder="Descripcion"></textarea>
-                  </div>
-                  <select class="custom-select custom-select-sm" (change)="Maquina3($event)">
-                    <option selected disabled>Maquina</option>
-                    <option *ngFor="let machine of machines" value="{{machine.name}}" >{{machine.name}}</option>
-                  </select>
+                </div>
 
-                </form>
-                <br>
-                <button (click)="AddExercise3()" type="button" class="btn btn-warning" data-toggle="modal" data-target="#exerciseAdded">Añadir</button>
-              </div>
+                <div class="form-group">
+                  <label for="exampleFormControlTextarea1"></label>
+                  <textarea class="form-control" id="description3" rows="1" placeholder="Descripcion"></textarea>
+                </div>
+                <select class="custom-select custom-select-sm" (change)="Maquina3($event)">
+                  <option selected disabled>Maquina</option>
+                  <option *ngFor="let machine of machines" value="{{machine.name}}">{{machine.name}}</option>
+                </select>
+
+              </form>
+              <br>
+              <button (click)="AddExercise3()" type="button" class="btn btn-warning" data-toggle="modal"
+                data-target="#exerciseAdded">Añadir</button>
             </div>
           </div>
+        </div>
 
-          <!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
-          <!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
-          <!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+        <br>
+        <br>
+
+        <!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+        <!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+        <!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+        <br>
+        <div class="container">
+          <div class="row">
+            <div class="col-sm" *ngIf="!expresionByExercise4">
+              <p>
+                <!--ejercicio 4 ////////////////////////////////////////// -->
+                <button class="btn btn-outline-warning col-md-12" type="button" data-toggle="collapse"
+                  data-target="#exercise4" aria-expanded="false" aria-controls="collapseExample">
+                  Ejericio #4
+
+                  <button type="button" class="btn btn-danger btn-sm "
+                    (click)="expresionByExercise4 = !expresionByExercise4">-</button>
+                </button>
 
 
-          <div class="container">
-            <div class="row">
-              <div class="col-sm" *ngIf="!expresionByExercise4">
-                <p>
-                  <!--ejercicio 4 ////////////////////////////////////////// -->
-                  <button class="btn btn-dark col-md-12" type="button" data-toggle="collapse" data-target="#exercise4"
-                    aria-expanded="false" aria-controls="collapseExample">
-                    Ejericio #4
-                    
-                      <button type="button" class="btn btn-danger btn-sm "
-                      (click)="expresionByExercise4 = !expresionByExercise4">-</button>
-                      </button>
-                    
+
+              </p>
+              <div class="collapse" id="exercise4">
+                <div class="card card-body">
+                  <form>
+                    <div class="form-group">
+                      <input type="text" class="form-control" id="name4" placeholder="nombre">
+                    </div>
 
 
-                </p>
-                <div class="collapse" id="exercise4">
-                  <div class="card card-body">
-                    <form>
-                      <div class="form-group">
-                        <input type="text" class="form-control" id="name4" placeholder="nombre">
+                    <div class="card  mb-2">
+                      <div class="card-header">
+                        <select class="custom-select custom-select-sm" (change)="Repetisiones4($event)">
+                          <option selected disabled>Repetisiones</option>
+                          <option value="4">4</option>
+                          <option value="8">8</option>
+                          <option value="10">10</option>
+                          <option value="12">12</option>
+                          <option value="16">16</option>
+                        </select>
                       </div>
 
+                    </div>
+                  </form>
+                  <form>
 
-                      <div class="card  mb-2">
-                        <div class="card-header">
-                          <select class="custom-select custom-select-sm" (change)="Repetisiones4($event)">
-                            <option selected disabled>Repetisiones</option>
-                            <option value="4">4</option>
-                            <option value="8">8</option>
-                            <option value="10">10</option>
-                            <option value="12">12</option>
-                            <option value="16">16</option>
-                          </select>
-                        </div>
-
-                      </div>
-                    </form>
-                    <form>
-
-                      <div class="card  mb-1" style="height: 25rem" style="margin-top: 0px">
-                        <div class="card-header">
-                          <select class="custom-select custom-select-sm" (change)="Series4($event)">
-                            <option selected disabled>series</option>
-                            <option value="2">2</option>
-                            <option value="4">4</option>
-                            <option value="6">6</option>
-                            <option value="8">8</option>
-                            <option value="10">10</option>
-                          </select>
-                        </div>
-
+                    <div class="card  mb-1" style="height: 25rem" style="margin-top: 0px">
+                      <div class="card-header">
+                        <select class="custom-select custom-select-sm" (change)="Series4($event)">
+                          <option selected disabled>series</option>
+                          <option value="2">2</option>
+                          <option value="4">4</option>
+                          <option value="6">6</option>
+                          <option value="8">8</option>
+                          <option value="10">10</option>
+                        </select>
                       </div>
 
-                      <div class="form-group">
-                        <label for="exampleFormControlTextarea1"></label>
-                        <textarea class="form-control" id="description4" rows="1" placeholder="Descripcion"></textarea>
-                      </div>
-                      <select class="custom-select custom-select-sm" (change)="Maquina4($event)">
-                        <option selected disabled>Maquina</option>
-                    <option *ngFor="let machine of machines" value="{{machine.name}}" >{{machine.name}}</option>
-                      </select>
+                    </div>
 
-                    </form>
-                    <br>
-                    <button (click)="AddExercise4()" type="button" class="btn btn-warning" data-toggle="modal" data-target="#exerciseAdded">Añadir</button>
-                  </div>
+                    <div class="form-group">
+                      <label for="exampleFormControlTextarea1"></label>
+                      <textarea class="form-control" id="description4" rows="1" placeholder="Descripcion"></textarea>
+                    </div>
+                    <select class="custom-select custom-select-sm" (change)="Maquina4($event)">
+                      <option selected disabled>Maquina</option>
+                      <option *ngFor="let machine of machines" value="{{machine.name}}">{{machine.name}}</option>
+                    </select>
+
+                  </form>
+                  <br>
+                  <button (click)="AddExercise4()" type="button" class="btn btn-warning" data-toggle="modal"
+                    data-target="#exerciseAdded">Añadir</button>
                 </div>
               </div>
-              <!--ejercicio 5 ////////////////////////////////////////// -->
-              <div class="col-sm" *ngIf="!expresionByExercise5">
-                <p>
+            </div>
+            <!--ejercicio 5 ////////////////////////////////////////// -->
+            <div class="col-sm" *ngIf="!expresionByExercise5">
+              <p>
 
-                  <button class="btn btn-dark col-md-12" type="button" data-toggle="collapse" data-target="#exercise5"
-                    aria-expanded="false" aria-controls="collapseExample">
-                    Ejercicio #5
-                    <button type="button" class="btn btn-danger btn-sm"
-                      (click)="expresionByExercise5 = !expresionByExercise5">-</button>
-                  </button>
-                </p>
-                <div class="collapse" id="exercise5">
-                  <div class="card card-body">
-                    <form>
-                      <div class="form-group">
-                        <input type="text" class="form-control" id="name5" placeholder="nombre">
+                <button class="btn btn-outline-warning col-md-12" type="button" data-toggle="collapse"
+                  data-target="#exercise5" aria-expanded="false" aria-controls="collapseExample">
+                  Ejercicio #5
+                  <button type="button" class="btn btn-danger btn-sm"
+                    (click)="expresionByExercise5 = !expresionByExercise5">-</button>
+                </button>
+              </p>
+              <div class="collapse" id="exercise5">
+                <div class="card card-body">
+                  <form>
+                    <div class="form-group">
+                      <input type="text" class="form-control" id="name5" placeholder="nombre">
+                    </div>
+
+
+                    <div class="card  mb-2">
+                      <div class="card-header">
+                        <select class="custom-select custom-select-sm" (change)="Repetisiones5($event)">
+                          <option selected disabled>Repetisiones</option>
+                          <option value="4">4</option>
+                          <option value="8">8</option>
+                          <option value="10">10</option>
+                          <option value="12">12</option>
+                          <option value="16">16</option>
+                        </select>
                       </div>
 
+                    </div>
+                  </form>
+                  <form>
 
-                      <div class="card  mb-2">
-                        <div class="card-header">
-                          <select class="custom-select custom-select-sm" (change)="Repetisiones5($event)">
-                            <option selected disabled>Repetisiones</option>
-                            <option value="4">4</option>
-                            <option value="8">8</option>
-                            <option value="10">10</option>
-                            <option value="12">12</option>
-                            <option value="16">16</option>
-                          </select>
-                        </div>
-
-                      </div>
-                    </form>
-                    <form>
-
-                      <div class="card  mb-1" style="height: 25rem" style="margin-top: 0px">
-                        <div class="card-header">
-                          <select class="custom-select custom-select-sm" (change)="Series5($event)">
-                            <option selected disabled>series</option>
-                            <option value="2">2</option>
-                            <option value="4">4</option>
-                            <option value="6">6</option>
-                            <option value="8">8</option>
-                            <option value="10">10</option>
-                          </select>
-                        </div>
-
+                    <div class="card  mb-1" style="height: 25rem" style="margin-top: 0px">
+                      <div class="card-header">
+                        <select class="custom-select custom-select-sm" (change)="Series5($event)">
+                          <option selected disabled>series</option>
+                          <option value="2">2</option>
+                          <option value="4">4</option>
+                          <option value="6">6</option>
+                          <option value="8">8</option>
+                          <option value="10">10</option>
+                        </select>
                       </div>
 
-                      <div class="form-group">
-                        <label for="exampleFormControlTextarea1"></label>
-                        <textarea class="form-control" id="description5" rows="1" placeholder="Descripcion"></textarea>
-                      </div>
-                      <select class="custom-select custom-select-sm" (change)="Maquina5($event)">
-                        <option selected disabled>Maquina</option>
-                    <option *ngFor="let machine of machines" value="{{machine.name}}" >{{machine.name}}</option>
-                      </select>
+                    </div>
 
-                    </form>
-                    <br>
-                    <button (click)="AddExercise5()" type="button" class="btn btn-warning" data-toggle="modal" data-target="#exerciseAdded">Añadir</button>
-                  </div>
+                    <div class="form-group">
+                      <label for="exampleFormControlTextarea1"></label>
+                      <textarea class="form-control" id="description5" rows="1" placeholder="Descripcion"></textarea>
+                    </div>
+                    <select class="custom-select custom-select-sm" (change)="Maquina5($event)">
+                      <option selected disabled>Maquina</option>
+                      <option *ngFor="let machine of machines" value="{{machine.name}}">{{machine.name}}</option>
+                    </select>
+
+                  </form>
+                  <br>
+                  <button (click)="AddExercise5()" type="button" class="btn btn-warning" data-toggle="modal"
+                    data-target="#exerciseAdded">Añadir</button>
                 </div>
               </div>
+            </div>
 
-              <!--ejercicio 6 ////////////////////////////////////////// -->
-              <div class="col-sm" *ngIf="!expresionByExercise6">
-                <p>
+            <!--ejercicio 6 ////////////////////////////////////////// -->
+            <div class="col-sm" *ngIf="!expresionByExercise6">
+              <p>
 
-                  <button class="btn btn-dark col-md-12" type="button" data-toggle="collapse" data-target="#exercise6"
-                    aria-expanded="false" aria-controls="collapseExample">
-                    Ejercicio #6
-                    <button type="button" class="btn btn-danger btn-sm"
-                      (click)="expresionByExercise6 = !expresionByExercise6">-</button>
-                  </button>
-                </p>
-                <div class="collapse" id="exercise6">
-                  <div class="card card-body">
-                    <form>
-                      <div class="form-group">
-                        <input type="text" class="form-control" id="name6" placeholder="nombre">
+                <button class="btn btn-outline-warning col-md-12" type="button" data-toggle="collapse"
+                  data-target="#exercise6" aria-expanded="false" aria-controls="collapseExample">
+                  Ejercicio #6
+                  <button type="button" class="btn btn-danger btn-sm"
+                    (click)="expresionByExercise6 = !expresionByExercise6">-</button>
+                </button>
+              </p>
+              <div class="collapse" id="exercise6">
+                <div class="card card-body">
+                  <form>
+                    <div class="form-group">
+                      <input type="text" class="form-control" id="name6" placeholder="nombre">
+                    </div>
+
+
+                    <div class="card  mb-2">
+                      <div class="card-header">
+                        <select class="custom-select custom-select-sm" (change)="Repetisiones6($event)">
+                          <option selected disabled>Repetisiones</option>
+                          <option value="4">4</option>
+                          <option value="8">8</option>
+                          <option value="10">10</option>
+                          <option value="12">12</option>
+                          <option value="16">16</option>
+                        </select>
                       </div>
 
+                    </div>
+                  </form>
+                  <form>
 
-                      <div class="card  mb-2">
-                        <div class="card-header">
-                          <select class="custom-select custom-select-sm" (change)="Repetisiones6($event)">
-                            <option selected disabled>Repetisiones</option>
-                            <option value="4">4</option>
-                            <option value="8">8</option>
-                            <option value="10">10</option>
-                            <option value="12">12</option>
-                            <option value="16">16</option>
-                          </select>
-                        </div>
-
-                      </div>
-                    </form>
-                    <form>
-
-                      <div class="card  mb-1" style="height: 25rem" style="margin-top: 0px">
-                        <div class="card-header">
-                          <select class="custom-select custom-select-sm" (change)="Series6($event)">
-                            <option selected disabled>series</option>
-                            <option value="2">2</option>
-                            <option value="4">4</option>
-                            <option value="6">6</option>
-                            <option value="8">8</option>
-                            <option value="10">10</option>
-                          </select>
-                        </div>
-
+                    <div class="card  mb-1" style="height: 25rem" style="margin-top: 0px">
+                      <div class="card-header">
+                        <select class="custom-select custom-select-sm" (change)="Series6($event)">
+                          <option selected disabled>series</option>
+                          <option value="2">2</option>
+                          <option value="4">4</option>
+                          <option value="6">6</option>
+                          <option value="8">8</option>
+                          <option value="10">10</option>
+                        </select>
                       </div>
 
-                      <div class="form-group">
-                        <label for="exampleFormControlTextarea1"></label>
-                        <textarea class="form-control" id="description6" rows="1" placeholder="Descripcion"></textarea>
-                      </div>
-                      <select class="custom-select custom-select-sm" (change)="Maquina6($event)">
-                        <option selected disabled>Maquina</option>
-                    <option *ngFor="let machine of machines" value="{{machine.name}}" >{{machine.name}}</option>
-                      </select>
+                    </div>
 
-                    </form>
-                    <br>
-                    <button (click)="AddExercise6()" type="button" class="btn btn-warning" data-toggle="modal" data-target="#exerciseAdded">Añadir</button>
-                  </div>
+                    <div class="form-group">
+                      <label for="exampleFormControlTextarea1"></label>
+                      <textarea class="form-control" id="description6" rows="1" placeholder="Descripcion"></textarea>
+                    </div>
+                    <select class="custom-select custom-select-sm" (change)="Maquina6($event)">
+                      <option selected disabled>Maquina</option>
+                      <option *ngFor="let machine of machines" value="{{machine.name}}">{{machine.name}}</option>
+                    </select>
+
+                  </form>
+                  <br>
+                  <button (click)="AddExercise6()" type="button" class="btn btn-warning" data-toggle="modal"
+                    data-target="#exerciseAdded">Añadir</button>
                 </div>
               </div>
             </div>
           </div>
         </div>
-
       </div>
-      <br>
-      <br>
 
-      <div class="container">
-        <div class="row">
-          <div class="col-sm">
-            
-          </div>
-          <div class="col-sm">
-            <button  *ngIf="sendRoutine" (click)="UpdateRoutine()" class="btn btn-outline-success col-md-12 " data-toggle="modal" data-target="#exampleModal">Enviar rutina</button>
-            
-          </div>
-          <div class="col-sm">
-  
-          </div>
+    </div>
+    <br>
+    <br>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-sm">
+
+        </div>
+        <div class="col-sm">
+          <button *ngIf="sendRoutine" (click)="UpdateRoutine()" class="btn btn-outline-success col-md-12 "
+            data-toggle="modal" data-target="#exampleModal">Enviar rutina</button>
+
+        </div>
+        <div class="col-sm">
+
         </div>
       </div>
-      
     </div>
-
   </div>
 
+  <div class="container" id="linea"></div>
   
-</div>
+
+  <app-footer></app-footer>
 
 
+  <div class="modal fade" id="exerciseAdded" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Añadido con exito</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
 
-<!-- Modales -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
 
-<!--Modal : Actualizacion de rutina -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Rutina actualizada</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        Se ha actualizo la rutina de {{apprentice.name}}
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
-        
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="exerciseAdded" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Añadido con exito</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
-        
+        </div>
       </div>
     </div>
   </div>
