@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { MatTableDataSource } from '@angular/material/table';
 import { ServiceService } from '../../Service/service.service';
 import { Apprentice } from 'src/app/Modelo/Apprentice';
 import { JourneyEnum } from 'src/app/Modelo/Journey';
@@ -19,12 +20,16 @@ export class SearchComponent implements OnInit {
   finished = false;
   new = false;
   statusSeleccionado: string;
+  searchDocument = ''; //initialised the text variable 
+
+  dataSource = null;
 
 
   constructor(private service: ServiceService, private router: Router) {}
 
   ngOnInit(): void {
     this.obtainAllData();
+    this.dataSource = new MatTableDataSource(this.apprentices);
   }
 
   Edit(apprentice: Apprentice) {
@@ -90,6 +95,15 @@ export class SearchComponent implements OnInit {
     this.service.filterByStatus().subscribe((data) => {
       this.apprenticesNew = data;
     });
+  }
+
+  searchDocumentMethod(x) { // appending the updated value to the variable 
+    this.searchDocument += x.target.value; 
+  } 
+
+  filtrar(event: Event) {
+    const filtro = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filtro.trim().toLowerCase();
   }
 
 

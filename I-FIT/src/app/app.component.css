@@ -1,14 +1,28 @@
-#navbarTogglerDemo01{
-    padding: 10px;
-    margin-left: 35px;
-    
+* h1, h2, h3, h4, h5, h6{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman';
 }
 
+
+
 #navBar{
-    background-color:#212529;
+    background-color:#ffee00;
     padding: 15px;
 }
 
-#navBar h3,h6{
-    color: white;
+#navBar h3{
+    color:black;
+    font-size: 42px;
+    margin-top: 8px;
 }
+
+#navBar h6{
+    color: black;
+    font-size: medium;
+    margin-left: 10px;
+}
+
+#linea{
+    background-color: black;
+    padding: 3px;
+}
+

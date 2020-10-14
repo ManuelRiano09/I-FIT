@@ -1,6 +1,7 @@
 package org.i_fit.controller;
 
 import org.i_fit.entities.responsesgym.Apprentice;
+import org.i_fit.entities.responsesgym.Exercise;
 import org.i_fit.services.InstructorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -34,6 +35,11 @@ public class InstructorController {
     @GetMapping("/apprenticedata/filter")
     public List<Apprentice> filterData(@RequestParam String journey, @RequestParam String condition){
         return instructorService.searchByStatus(journey, condition);
+    }
+
+    @GetMapping("/apprenticedata/exercise")
+    public List<Exercise> getExerciseOfApprentice(Integer document){
+        return instructorService.searchExercises(document);
     }
 
 
