@@ -1,0 +1,101 @@
+* h1, h2, h3, h4, h5, h6{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman';
+}
+
+*{
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.body{
+    background-color: white;
+}
+
+#logo{
+    
+}
+
+#rutinasContainer{
+    background-color:#383B3B;
+}
+
+#rutinasContainer h3{
+    padding-top: 25px;
+    color: white;
+    font-size: 55px;
+    text-align: center;
+}
+
+#rutinasContainer h5{
+    color: white;
+    font-size: medium;
+    text-align: center;
+    padding: 30px;
+}
+
+#rutinasContainer h6{
+    color: white;
+    font-size: small;
+}
+
+#rutinasContainer p{
+    color: white;
+    font-size: medium;
+    text-align: center;
+    
+}
+
+#tituloRutina{
+    background-size: 100% 100%; /*Con esto ocupas el 100% del contenedor*/
+    background-repeat: no-repeat;  /*Evitas que la imagen se repita si el contenedor es mas grande*/
+    background-color: rgb(41, 40, 40);
+    background-blend-mode: soft-light;
+    background-image:url("../../../assets/images/rutina.jpg"); 
+    
+}
+
+
+#tituloRutina h3, h5{
+    
+    padding: 50px;
+    font-size: 55px;
+    color: white;
+    text-align: center;
+    
+    
+}
+
+#verRutina{
+
+
+
+}
+
+#verRutina td{
+    color: black;
+    text-align: center;
+    font-size: larger;
+
+}
+
+
+#historialRutina{
+
+    background-size: 100% 100%; /*Con esto ocupas el 100% del contenedor*/
+   background-repeat: no-repeat;  /*Evitas que la imagen se repita si el contenedor es mas grande*/
+   background-color: rgb(41, 40, 40);
+   background-blend-mode: soft-light;
+   background-image:url("../../../assets/images/rutina.jpg"); 
+   background-color:#ffee00;
+  
+
+}
+#linea{
+    background-color: #ffee00;
+    padding: 3px;
+}
+
+#footer{
+    margin-top: 25px;
+    background-color: black;
+    padding: 100px;
+}
