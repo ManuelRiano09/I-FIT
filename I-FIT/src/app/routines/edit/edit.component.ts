@@ -14,6 +14,7 @@ import { StatusEnum } from 'src/app/Modelo/Status';
 })
 export class EditComponent implements OnInit {
   apprentice: Apprentice = new Apprentice();
+  exercises: Exercise[] = new Array();
   machines: Machine[];
   routine: Routine = new Routine();
 
@@ -36,6 +37,7 @@ export class EditComponent implements OnInit {
   ngOnInit(): void {
     this.CallInfo();
     this.CallMachines();
+
   }
 
   CallInfo() {
@@ -43,6 +45,10 @@ export class EditComponent implements OnInit {
     let id = localStorage.getItem('document');
     this.service.getApprenticeId(id).subscribe((data) => {
       this.apprentice = data;
+    });
+    
+    this.service.obtainExerciseOfApprentice(id).subscribe((data) => {
+      this.exercises = data;
     });
   }
 
@@ -63,6 +69,7 @@ export class EditComponent implements OnInit {
     )).value;
     console.log(this.exercise1);
     this.exercisesList.push(this.exercise1);
+    this.sendRoutine = true;
   }
 
   Maquina1(event: any) {
@@ -202,4 +209,10 @@ export class EditComponent implements OnInit {
     this.service.updateRoutine(this.apprentice);
     console.log(this.apprentice);
   }
+
+  Search(){
+    this.router.navigate(['search']);
+  }
+
+ 
 }

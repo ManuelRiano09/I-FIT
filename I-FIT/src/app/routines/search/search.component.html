@@ -12,6 +12,16 @@
 
 <div class="container" id="table">
 
+  <div class="input-group flex-nowrap">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="addon-wrapping">#</span>
+    </div>
+    <input type="text" (keyup)="filtrar($event)" class="form-control" placeholder="Documento" aria-label="Username" aria-describedby="addon-wrapping">
+  </div>
+
+
+<p>{{searchDocument}}</p>  
+
   <br>
   <br>
   
@@ -86,3 +96,7 @@
 </div>
 
 </div>
+
+<app-footer></app-footer>
+
+
