@@ -1,7 +1,8 @@
 #carouselInit{
-    width: 100%;
+    width: 90%;
     height: 45vw;
-	margin-bottom: 4%;
+    margin-bottom: 4%;
+
 }
 
 .carousel-inner, .carousel-item, img{
@@ -10,7 +11,7 @@
 }
 
 .video > .row{
-    width: 100%;
+    width: 90vw;
     height: 30vw;
 }
 

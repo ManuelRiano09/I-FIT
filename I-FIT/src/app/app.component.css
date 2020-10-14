@@ -5,7 +5,9 @@
 
 
 #navBar{
-    background-color:#ffee00;
+    background-color: #343a40;  
+    box-shadow: 0px 5px 15px #fcb823;
+    position: ;
     padding: 15px;
 }
 
