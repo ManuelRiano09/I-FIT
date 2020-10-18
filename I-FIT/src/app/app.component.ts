@@ -8,23 +8,18 @@ import {ServiceService} from '../app/Service/service.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'I-FIT';
+title = 'I-FIT';
 
   constructor(private router:Router, private service:ServiceService){
-
+  
   }
-
-//  ngOnInit(): void {
-//    this.Init();
-//  }
-
-  Search(){
-    this.router.navigate(['search']);
+  
+  ngOnInit(): void {
+     this.Init();
   }
-
+  
   Init(){
     this.router.navigate(['init']);
   }
-
 
 }

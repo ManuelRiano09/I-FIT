@@ -1,0 +1,22 @@
+#navBar{
+    background-color: #343a40;  
+    box-shadow: 0px 5px 15px #fcb823;
+    padding: 15px;
+}
+
+#navBar h3{
+    color:black;
+    font-size: 42px;
+    margin-top: 8px;
+}
+
+#navBar h6{
+    color: black;
+    font-size: medium;
+    margin-left: 10px;
+}
+
+#linea{
+    background-color: black;
+    padding: 3px;
+}
