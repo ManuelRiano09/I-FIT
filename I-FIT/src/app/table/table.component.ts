@@ -10,25 +10,19 @@ import { ServiceService } from '../Service/service.service';
 })
 export class TableComponent implements OnInit {
 
-  datos: Apprentice[];
-
   columnas: string[] = ['codigo', 'descripcion', 'precio'];
-//
-//  datos: Articulo[] = [new Articulo(1, 'papas', 55),
-//  new Articulo(2, 'manzanas', 53),
-//  new Articulo(3, 'naranjas', 25),
-//  ];
 
+  datos: Articulo[] = [new Articulo(1, 'papas', 55),
+  new Articulo(2, 'manzanas', 53),
+  new Articulo(3, 'naranjas', 25),
+  ];
   dataSource = null;
 
   constructor(private service: ServiceService) { }
 
   ngOnInit(): void {
     
-    this.dataSource = new MatTableDataSource(this.datos);
-    this.service.getInfoForInstructor().subscribe((data) => {
-      this.datos = data;
-    });
+ 
   }
 
   filtrar(event: Event) {
