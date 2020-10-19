@@ -15,6 +15,9 @@ import { TableComponent } from './table/table.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatInputModule } from '@angular/material/input';
 import { FooterComponent } from './components/footer/footer.component';
+import { LoginComponent } from './components/login/login.component';
+import { FormLoginInstructorComponent } from './components/form-login-instructor/form-login-instructor.component';
+import { FormLoginAprendizComponent } from './components/form-login-aprendiz/form-login-aprendiz.component';
 
 
 @NgModule({
@@ -25,7 +28,10 @@ import { FooterComponent } from './components/footer/footer.component';
     EditComponent,
     InitComponent,
     TableComponent,
-    FooterComponent
+    FooterComponent,
+    LoginComponent,
+    FormLoginInstructorComponent,
+    FormLoginAprendizComponent
   ],
   imports: [
     BrowserModule,
