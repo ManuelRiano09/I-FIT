@@ -6,6 +6,10 @@
     font-family: 'Times New Roman', Times, serif;
 }
 
+#id p{
+    font-size: larger;
+}
+
 .body{
     background-color: white;
 }

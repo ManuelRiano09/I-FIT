@@ -1,0 +1,16 @@
+#navBar{
+    background-color: #343a40;  
+    box-shadow: 0px 5px #fcb823;
+    padding: 15px;
+}
+
+#navBar h5{
+    font-size: 2vh;
+    margin-top: 8px;
+}
+
+
+#linea{
+    background-color: black;
+    padding: 3px;
+}

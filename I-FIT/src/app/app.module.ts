@@ -16,6 +16,10 @@ import { MatTableModule } from '@angular/material/table';
 import { MatInputModule } from '@angular/material/input';
 import { FooterComponent } from './components/footer/footer.component';
 
+import { NavComponent } from './components/nav/nav.component';
+
+
+
 
 @NgModule({
   declarations: [
@@ -25,7 +29,11 @@ import { FooterComponent } from './components/footer/footer.component';
     EditComponent,
     InitComponent,
     TableComponent,
-    FooterComponent
+    FooterComponent,
+
+    NavComponent
+
+
   ],
   imports: [
     BrowserModule,
