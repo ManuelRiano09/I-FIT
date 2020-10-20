@@ -15,7 +15,7 @@ title = 'I-FIT';
   }
   
   ngOnInit(): void {
-     this.Init();
+   
   }
   
   Init(){
