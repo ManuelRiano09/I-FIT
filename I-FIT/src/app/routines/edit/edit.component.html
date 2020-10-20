@@ -1,3 +1,4 @@
+<app-nav></app-nav>
 <div class="body">
 
  
@@ -20,29 +21,29 @@
   </div>
 
 
-  <div class="container" style="padding: 40px;" >
+  <div class="container" style="padding: 40px;" id="datos">
     
     <div class="card text-center text-white bg-dark" style="border-top: -10px;">
       <div class="card-header">
-        <h3>Datos personales del aprendiz<hr></h3>
+        <h1>Datos personales del aprendiz<hr></h1>
         
       </div>
-      <div class="card-body">
+      <div class="card-body" style="font-size: 20px;">
 
         <div class="row">
           <div class="col">
-            <h6 class="card-title">Documento: {{ apprentice.document }}</h6>
-            <h6 class="card-title">Nombre: {{ apprentice.name }}</h6>
+            <p class="card-title">Documento: {{ apprentice.document }}</p>
+            <p class="card-title">Nombre: {{ apprentice.name }}</p>
 
-            <h6 class="card-title">Jornada: {{ apprentice.journeyEnum }}</h6>
-            <h6 class="card-title">Correo: {{ apprentice.email }}</h6>
+            <p class="card-title">Jornada: {{ apprentice.journeyEnum }}</p>
+            <p class="card-title">Correo: {{ apprentice.email }}</p>
 
           </div>
           <div class="col">
-            <h6 class="card-title">Estatura: {{ apprentice.height }}m</h6>
-            <h6 class="card-title">Peso: {{ apprentice.weight }} kg</h6>
+            <p class="card-title">Estatura: {{ apprentice.height }}m</p>
+            <p class="card-title">Peso: {{ apprentice.weight }} kg</p>
 
-            <h6 class="card-title">Edad: {{ apprentice.age }}</h6>
+            <p class="card-title">Edad: {{ apprentice.age }}</p>
           </div>
         </div>
 
@@ -58,18 +59,18 @@
 
     <div class="card text-center text-white bg-dark">
       <div class="card-header">
-        <h3>Comentarios del aprendiz</h3>
+        <h1>Comentarios del aprendiz</h1>
         <hr>
       </div>
-      <div class="card-body">
+      <div class="card-body" style="font-size: 20px;">
         <div class="row">
           <div class="col">
-            <h3 class="card-title">Comentarios</h3>
-            <h3 class="card-title">{{ apprentice.comments }}</h3>
+            <p class="card-title">Comentarios</p>
+            <p class="card-title">{{ apprentice.comments }}</p>
           </div>
           <div class="col">
-            <h3 class="card-title">Limitaciones</h3>
-            <h3 class="card-title">{{ apprentice.limitations}} </h3>
+            <p class="card-title">Limitaciones</p>
+            <p class="card-title">{{ apprentice.limitations}} </p>
           </div>
         </div>
 

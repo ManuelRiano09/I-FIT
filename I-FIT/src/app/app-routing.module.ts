@@ -7,11 +7,11 @@ import {InitComponent} from './init/init.component';
 import { TableComponent } from './table/table.component';
 
 const routes: Routes = [
-  {path:'search' , component:SearchComponent},
-  {path:'add', component:AddComponent},
-  {path:'edit', component:EditComponent},
-  {path:'init', component:InitComponent},
-  {path:'table', component:TableComponent}
+  {path: 'search' , component: SearchComponent},
+  {path: 'add', component: AddComponent},
+  {path: 'edit', component: EditComponent},
+  {path: 'init', component: InitComponent},
+  {path: 'table', component: TableComponent}
 ];
 
 @NgModule({

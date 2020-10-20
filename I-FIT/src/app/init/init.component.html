@@ -1,44 +1,112 @@
-<section class="slider">
-    <div id="carouselInit" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img class="d-block w-100" src="../assets/pictures/img1.jpg" alt="First slide">
-          </div>
-          <div class="carousel-item">
-            <img class="d-block w-100" src="../assets/pictures/img2.jpg" alt="Second slide">
-          </div>
-          <div class="carousel-item">
-            <img class="d-block w-100" src="../assets/pictures/img3.jpg" alt="Third slide">
-          </div>
-          <div class="carousel-item">
-            <img class="d-block w-100" src="../assets/pictures/img4.jpg" alt="Fourd slide">
-          </div>
-        </div>
-        <a class="carousel-control-prev" href="#carouselInit" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Anterior</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselInit" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Siguiente</span>
-        </a>
+<!-- NAV -->
+<app-nav></app-nav>
+<!-- SLIDER -->
+<div class="slider">
+  <div id="carouselInit" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img class="d-block w-100" src="../assets/pictures/img1.jpg" alt="First slide">
       </div>
-</section>
-   
-<section class="video">
+      <div class="carousel-item">
+        <img class="d-block w-100" src="../assets/pictures/img2.jpg" alt="Second slide">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="../assets/pictures/img3.jpg" alt="Third slide">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="../assets/pictures/img4.jpg" alt="Fourd slide">
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselInit" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Anterior</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselInit" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Siguiente</span>
+    </a>
+  </div>
+</div>
+  
+<!-- VIDEO -->
+<div class="video">
+  <div class="row align-items-center">
+    <div class="col-md-6">
+      <div class="col p-4 d-flex flex-column position-static ">
+        <h1>GIMNASIO</h1>
+        <hr><br>
+        <h1 id="letraNaranja">CENTRO DE INDUSTRIA Y <br><br>
+        CONSTRUCCIÓN</h1>
+      </div>            
+    </div>
+    <div class="col-md-6">
+      <div class="col p-4 d-flex flex-column position-static">
+        <iframe src="https://www.youtube.com/embed/POK9DH8bBn8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>		
+</div>
+<!-- COLUMNAS -->
+  <div class="container">
     <div class="row">
-        <div class="col align-self-center">
-          <h1>GIMNASIO</h1>
-          <hr>
-          <h1 id="letraNaranja">CENTRO DE INDUSTRIA Y CONSTRUCCIÓN</h1>
+      <div class="col-md-4">
+        <div class="col p-4 d-flex flex-colum position-static">
+          <div class="card">
+            <div class="card-body">
+              <div class="tituloCard">
+                <h1 class="card-title" id="letraNaranja">Horario Gimnasio</h1>              
+              </div>
+              <h2>Jornada Mañana</h2>
+              <h3 class="card-text">Lunes a Viernes </h3>
+              <p class="card-text">06:00 Am a 08:00 Am </p>
+              <p class="card-text">10:00 Am a 12:00 Am </p>
+              <h2>Jornada Tarde</h2>
+              <h3>Lunes a Viernes</h3>
+              <p class="card-text">01:00 Pm a 02:00 Pm</p>             
+              <p class="card-text">04:00 Pm a 06:00 Pm</p>             
+            </div>
+          </div>
         </div>
-        <div class="col-7">
-            <iframe src="https://www.youtube.com/embed/POK9DH8bBn8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="col-md-4">
+        <div class="col p-4 d-flex flex-colum position-static">
+          <div class="card">
+            <div class="card-body">
+              <div class="tituloCard">
+                <h1 class="card-title" id="letraNaranja">Entrenamientos Deportivos</h1>              
+              </div>
+              <h2>Futbol</h2>
+              <h3>Lunes y Jueves</h3>
+              <p class="card-text">03:00 Pm a 05:00 Pm</p>
+              <h2>Volleyball</h2>  
+              <h3>Martes y Viernes</h3>   
+              <p class="card-text">08:00 Am a 10:00 Am</p>         
+            </div>
+          </div>
         </div>
-    </div>		
-</section>
+      </div>
+      <div class="col-md-4">
+        <div class="col p-4 d-flex flex-colum position-static">
+          <div class="card">
+            <div class="card-body">
+              <div class="tituloCard">
+                <h1 class="card-title" id="letraNaranja">I Fit</h1>              
+              </div>              
+              <p class="card-text">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque voluptatibus 
+                ducimus saepe corrupti porro! Nihil corporis deserunt obcaecati iusto voluptate nostrum sequi, 
+                accusamus perspiciatis aut architecto molestias aperiam nulla recusandae.
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque voluptatibus 
+                ducimus saepe corrupti porro! Nihil corporis deserunt obcaecati iusto voluptate nostrum sequi, 
+                accusamus perspiciatis aut architecto molestias aperiam nulla recusandae.
+              </p>              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 <footer>
-
   <app-footer></app-footer>
 </footer>
 
