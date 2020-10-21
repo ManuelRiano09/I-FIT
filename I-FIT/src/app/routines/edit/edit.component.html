@@ -1,86 +1,87 @@
 <app-nav></app-nav>
-<div class="body">
+<div id="titulo" >
+  <h1 id="titulo"> Datos del aprendiz </h1>
+  
+</div>
 
- 
 
-  <div class="container" >
-    <div class="row">
-      <div class="col-sm">
+
+<div class="container-fluid" style="text-align: center; margin-top: 50px;" id="datos">
+  <div class="row">
+    <div class="col">
+
+      <div class="card border-warning mb-3"  style="text-align: center; height: 500px;">
         
-      </div>
-      <div class="col-sm" style="text-align: center;">
-        <img src="../../../assets/images/user.png" style="width: 220px; margin-top: 10px;" id="logo">
-        <hr>
-  <button (click)="Search()" class="btn btn-warning my-2 my-sm-0" style="margin-right: 35px;">Ver Lista</button>
+        <div class="card-body text-warning">
+          <h5 class="card-title">Personales</h5>
+          <hr>
+          <div class="card-body" style="font-size: 20px;">
 
+            <div class="row">
+              <div class="col">
+                <p class="card-title">Documento: {{ apprentice.document }}</p>
+                <p class="card-title">Nombre: {{ apprentice.name }}</p>
+    
+                <p class="card-title">Jornada: {{ apprentice.journeyEnum }}</p>
+                <p class="card-title">Correo: {{ apprentice.email }}</p>
+    
+              </div>
+              <div class="col">
+                <p class="card-title">Estatura: {{ apprentice.height }}m</p>
+                <p class="card-title">Peso: {{ apprentice.weight }} kg</p>
+    
+                <p class="card-title">Edad: {{ apprentice.age }}</p>
+              </div>
+            </div>
+    
+    
+    
+          </div>
+          
+        </div>
       </div>
-      <div class="col-sm">
+
+
+    </div>
+    <div class="col">
+
+
+      <div class="card border-warning mb-3" style="max-width: 18rem;" style="text-align: center; height: 500px;">
         
+        <div class="card-body text-warning">
+          <h5 class="card-title">Comentarios</h5>
+          <hr>
+          <div class="card-body" style="font-size: 20px;">
+            <div class="row">
+              <div class="col">
+                <p class="card-title">Comentarios</p>
+                <p class="card-title">{{ apprentice.comments }}</p>
+              </div>
+              <div class="col">
+                <p class="card-title">Limitaciones</p>
+                <p class="card-title">{{ apprentice.limitations}} </p>
+              </div>
+            </div>
+    
+          </div>
+       
+        </div>
       </div>
+
+
+
     </div>
   </div>
+</div>
+
+
+
+<div class="body">
 
 
   <div class="container" style="padding: 40px;" id="datos">
     
-    <div class="card text-center text-white bg-dark" style="border-top: -10px;">
-      <div class="card-header">
-        <h1>Datos personales del aprendiz<hr></h1>
-        
-      </div>
-      <div class="card-body" style="font-size: 20px;">
-
-        <div class="row">
-          <div class="col">
-            <p class="card-title">Documento: {{ apprentice.document }}</p>
-            <p class="card-title">Nombre: {{ apprentice.name }}</p>
-
-            <p class="card-title">Jornada: {{ apprentice.journeyEnum }}</p>
-            <p class="card-title">Correo: {{ apprentice.email }}</p>
-
-          </div>
-          <div class="col">
-            <p class="card-title">Estatura: {{ apprentice.height }}m</p>
-            <p class="card-title">Peso: {{ apprentice.weight }} kg</p>
-
-            <p class="card-title">Edad: {{ apprentice.age }}</p>
-          </div>
-        </div>
-
-
-
-      </div>
-
-    </div>
-
     <br>
-
-    <!--tarjeta comentarios del aprendiz-->
-
-    <div class="card text-center text-white bg-dark">
-      <div class="card-header">
-        <h1>Comentarios del aprendiz</h1>
-        <hr>
-      </div>
-      <div class="card-body" style="font-size: 20px;">
-        <div class="row">
-          <div class="col">
-            <p class="card-title">Comentarios</p>
-            <p class="card-title">{{ apprentice.comments }}</p>
-          </div>
-          <div class="col">
-            <p class="card-title">Limitaciones</p>
-            <p class="card-title">{{ apprentice.limitations}} </p>
-          </div>
-        </div>
-
-      </div>
-      <div class="card-footer text-muted">
-        
-        
-      </div>
-    </div>
-
     <br>
     <br>
     <button data-toggle="collapse"
