@@ -1,5 +1,5 @@
 .table{
-    background-color: #fcb823;
+    background-color: lightblue;
 }
 
 #table{
@@ -9,9 +9,10 @@
 }
 
 #titulo{
+    margin-top: 65px;
     text-align: center;
     color: #FF7906;
     font-family: 'Anton', sans-serif;
-    
+    font-size: 6vh;
 }
 
