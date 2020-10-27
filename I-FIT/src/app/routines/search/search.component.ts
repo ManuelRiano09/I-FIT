@@ -29,11 +29,11 @@ export class SearchComponent implements OnInit {
 
   ngOnInit(): void {
     this.obtainAllData();
-    this.dataSource = new MatTableDataSource(this.apprentices);
+
   }
 
   Edit(apprentice: Apprentice) {
-    localStorage.setItem('document', apprentice.document.toString());
+    localStorage.setItem('document', apprentice.id.toString());
     this.router.navigate(['edit']);
   }
 

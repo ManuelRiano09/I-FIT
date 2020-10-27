@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "i-fit-f470a": {
+      "hosting": {
+        "I-FIT": [
+          "i-fit-f470a"
+        ]
+      }
+    }
+  }
+}

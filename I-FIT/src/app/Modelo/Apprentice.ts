@@ -3,6 +3,7 @@ import { Routine } from "./Routine";
 
 export class Apprentice{
 
+    id: string;
     document: number;
     email: string;
     password: string;
