@@ -28,15 +28,20 @@ export class LoginServiceService {
       }
 
       this.user.id = user.uid;
+      this.user.name = user.displayName;
+      this.user.email = user.email;
+      this.user.photo = user.photoURL;
     });
   }
 
   login() {
     this.auth.signInWithPopup(new auth.GoogleAuthProvider());
+    localStorage.setItem("userLogged", JSON.stringify(this.user));
   }
 
   logout() {
     this.auth.signOut();
+    localStorage.setItem("userLogged", 'unlogged');
   }
 
   verifyLogin() {
@@ -51,10 +56,12 @@ export class LoginServiceService {
 
   }
 
+
   obtainUser(): Apprentice{
     this.verifyIfIsNewAccount().subscribe((data) => {
       this.user = data;
     });
+    localStorage.setItem("userLogged", JSON.stringify(this.user));
     return this.user;
   }
 }

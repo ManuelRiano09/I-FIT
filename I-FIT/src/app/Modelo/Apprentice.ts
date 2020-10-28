@@ -6,6 +6,7 @@ export class Apprentice{
     id: string;
     document: number;
     email: string;
+    photo: string;
     password: string;
     name: string;
     journeyEnum: JourneyEnum;
