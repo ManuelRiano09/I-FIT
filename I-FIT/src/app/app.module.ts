@@ -17,6 +17,7 @@ import { MatInputModule } from '@angular/material/input';
 import { FooterComponent } from './components/footer/footer.component';
 
 import { NavComponent } from './components/nav/nav.component';
+import { ApprenticeRegisterComponent } from './components/apprentice-register/apprentice-register.component';
 
 
 
@@ -31,7 +32,9 @@ import { NavComponent } from './components/nav/nav.component';
     TableComponent,
     FooterComponent,
 
-    NavComponent
+    NavComponent,
+
+    ApprenticeRegisterComponent
 
 
   ],

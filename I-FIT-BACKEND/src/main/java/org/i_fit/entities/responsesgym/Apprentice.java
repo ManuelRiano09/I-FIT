@@ -5,12 +5,14 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Data
-@Document(collection = "apprentice")
+@Document(collection = "apprenticeData")
 public class Apprentice {
 
     @Id
-    public Integer document;
+    private String id;
+    private Integer document;
     private String email;
+    private String photo;
     private String password;
     private String name;
     private Journey.JourneyEnum journeyEnum;
@@ -20,9 +22,5 @@ public class Apprentice {
     private String comments;
     private String limitations;
     private Routine routine;
-
-
-
-
 
 }
