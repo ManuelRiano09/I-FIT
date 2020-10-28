@@ -20,7 +20,7 @@ public class ApprenticeController {
 
 
     @GetMapping("/apprentice")
-    public Optional<Apprentice> getApprenticeData(Integer id){
+    public Optional<Apprentice> getApprenticeData(String id){
         return apprenticeService.getApprentice(id);
     }
 }

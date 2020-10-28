@@ -1,18 +1,22 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Apprentice } from '../Modelo/Apprentice';
-import { SearchComponent } from '../routines/search/search.component';
-import { stringify } from '@angular/compiler/src/util';
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Machine } from '../Modelo/Machine';
 import { Exercise } from '../Modelo/Exercise';
+
+
 
 
 @Injectable({
   providedIn: 'root',
 })
 export class ServiceService {
-  constructor(private http: HttpClient) {}
+
+
+
+
+  constructor(private http: HttpClient ) {
+  }
 
   Url = 'http://localhost:10101/I_FIT/apprenticedata'; // obtain the data by journey (instrcutor)
   Url2 = 'http://localhost:10101/I_FIT/apprentice'; // obtain one apprentice by his document (instructor, apprentice)
@@ -54,4 +58,6 @@ export class ServiceService {
   private obtainStatusStorage(): string{
     return localStorage.getItem('status');
   }
+
+  
 }
