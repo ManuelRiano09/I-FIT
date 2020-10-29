@@ -23,4 +23,8 @@ export class NavComponent{
     this.router.navigate(['init']);
   }
 
+  Maquinas(): void{
+    this.router.navigate(['maquinas']);
+  }
+
 }
