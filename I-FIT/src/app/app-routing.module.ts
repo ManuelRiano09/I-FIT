@@ -8,6 +8,7 @@ import { TableComponent } from './table/table.component';
 import { ApprenticeRegisterComponent } from './components/apprentice-register/apprentice-register.component';
 import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
+import { MaquinasComponent } from './components/maquinas/maquinas.component';
 
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireAnalyticsModule } from '@angular/fire/analytics';
@@ -19,7 +20,8 @@ const routes: Routes = [
   {path: 'edit', component: EditComponent},
   {path: 'init', component: InitComponent},
   {path: 'table', component: TableComponent},
-  {path: 'login', component: ApprenticeRegisterComponent}
+  {path: 'login', component: ApprenticeRegisterComponent},
+  {path: 'maquinas', component: MaquinasComponent}
 ];
 
 @NgModule({

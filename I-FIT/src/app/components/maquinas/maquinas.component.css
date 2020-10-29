@@ -1,0 +1,71 @@
+#sectionMaquinas{
+    background-image: url("https://images.unsplash.com/photo-1540497077202-7c8a3999166f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80");
+    height: 60%;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    margin: 0!important;
+}
+
+#sectionMaquinas::before{
+    content: '';
+    display: block;
+    background: inherit;
+    position: absolute;
+    width: 100%; height: 100%;
+    left: 0; top: 0;
+    filter: blur(2px);
+    transform: scale(1.2,1.4);
+}
+
+#titulo{
+    font-family: 'Anton', sans-serif;
+    letter-spacing: 1px;
+    font-size: 4rem;
+    color: #FF7906;
+    margin-bottom: 25px;
+}
+
+.btn{
+    background-color: #FF7906;
+    color:white;
+}
+
+.btn:hover{
+    background-color: #eb6f03;
+}
+
+.mt-5, .my-5{
+    margin-top: 5rem!important;
+}
+
+.display-5{
+    font-size: 2rem;
+}
+
+.lead{
+    text-align: justify;
+}
+
+.bg-dark{
+    background: #232526;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #414345, #232526);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    box-sizing: border-box;
+}
+
+.bg-light{
+    /* background: #FF8008;  fallback for old browsers */
+    /* background: -webkit-linear-gradient(to right, #FFC837, #FF8008);  Chrome 10-25, Safari 5.1-6 */
+    /* background: linear-gradient(to right, #FFC837, #FF8008); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-image: linear-gradient( 109.6deg,  rgba(255,179,71,1) 11.2%, rgba(255,155,57,1) 91.1% );
+    box-sizing: border-box;
+}
+
+#imgCards{
+    width: 100%;
+    height: 100%;
+    border-radius: 21px 21px 0 0;
+}
