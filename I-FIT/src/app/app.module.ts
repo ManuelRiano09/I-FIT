@@ -18,6 +18,7 @@ import { FooterComponent } from './components/footer/footer.component';
 
 import { NavComponent } from './components/nav/nav.component';
 import { ApprenticeRegisterComponent } from './components/apprentice-register/apprentice-register.component';
+import { RegisterComponent } from './components/register/register.component';
 
 
 
@@ -34,7 +35,9 @@ import { ApprenticeRegisterComponent } from './components/apprentice-register/ap
 
     NavComponent,
 
-    ApprenticeRegisterComponent
+    ApprenticeRegisterComponent,
+
+    RegisterComponent
 
 
   ],
