@@ -22,5 +22,6 @@ public class LoginController {
     @PutMapping("/login")
     public void verifyLogin(@RequestBody Apprentice apprentice){
         loginService.ifUserExists(apprentice);
+
     }
 }
