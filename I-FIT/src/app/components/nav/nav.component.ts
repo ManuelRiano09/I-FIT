@@ -23,4 +23,8 @@ export class NavComponent{
     this.router.navigate(['init']);
   }
 
+  signIn(){
+    this.router.navigate(['login']);
+  }
+
 }

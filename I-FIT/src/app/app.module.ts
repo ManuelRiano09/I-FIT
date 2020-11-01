@@ -16,11 +16,15 @@ import { MatTableModule } from '@angular/material/table';
 import { MatInputModule } from '@angular/material/input';
 import { FooterComponent } from './components/footer/footer.component';
 
+
 import { NavComponent } from './components/nav/nav.component';
 import { ApprenticeRegisterComponent } from './components/apprentice-register/apprentice-register.component';
 import { RegisterComponent } from './components/register/register.component';
+import { BannerComponent } from './components/banner/banner.component';
 
-
+import {MatButtonModule} from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
+import {MatIconModule} from '@angular/material/icon';
 
 
 @NgModule({
@@ -32,14 +36,10 @@ import { RegisterComponent } from './components/register/register.component';
     InitComponent,
     TableComponent,
     FooterComponent,
-
     NavComponent,
-
     ApprenticeRegisterComponent,
-
-    RegisterComponent
-
-
+    RegisterComponent,
+    BannerComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,7 +48,10 @@ import { RegisterComponent } from './components/register/register.component';
     HttpClientModule,
     BrowserAnimationsModule,
     MatTableModule,
-    MatInputModule
+    MatInputModule,
+    MatButtonModule,
+    MatCardModule,
+    MatIconModule
   ],
   providers: [ServiceService],
   bootstrap: [AppComponent]

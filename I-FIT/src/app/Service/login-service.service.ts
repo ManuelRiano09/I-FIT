@@ -9,12 +9,14 @@ import { Router } from '@angular/router';
 @Injectable({
   providedIn: 'root'
 })
-export class LoginServiceService { 
+export class LoginServiceService {
+  
 
   user: Apprentice = new Apprentice();
 
   Url = 'http://localhost:10101/I_FIT/login';
   Url2 = 'http://localhost:10101/I_FIT/apprentice';
+  url3 = 'http://localhost:10101/I_FIT/register';
 
 
   constructor(public auth: AngularFireAuth, private http: HttpClient) { 
@@ -53,7 +55,6 @@ export class LoginServiceService {
 
   verifyIfIsNewAccount() {
     return this.http.get<Apprentice>(this.Url2 + "?id=" + this.user.id);
-
   }
 
 
@@ -63,5 +64,11 @@ export class LoginServiceService {
     });
     localStorage.setItem("userLogged", JSON.stringify(this.user));
     return this.user;
+  }
+
+  registerUser(apprentice: Apprentice) {
+    const headers = new HttpHeaders().set("Content-Type", "application/json");
+    this.http.put(this.url3, apprentice, {headers}).subscribe(response => console.log(response),
+    error => console.log("algo fallo"));
   }
 }

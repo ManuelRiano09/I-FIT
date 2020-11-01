@@ -1,3 +1,11 @@
+.materialButton{
+    outline:none;
+}
+
+.contenedor{
+    margin-top: 100px;
+}
+
 #carouselInit{
     width: 100%;
     height: 45vw;
@@ -49,6 +57,9 @@ hr{
 
 /* RESPONSIVE VIDEO */
 @media (max-width: 760px){
+    .contenedor{
+        margin-top: 100px;
+    }
     .video > .row > .col-md-6 > .col > iframe{
         width: 100%;
         height: 150px;
@@ -87,3 +98,27 @@ hr{
 p{
     font-size: larger;
 }
+
+.section3{
+    padding: 45px;
+    margin-top: -25px;
+    min-height: 50vh;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    background-blend-mode: soft-light;
+    background-image: url('https://image.freepik.com/foto-gratis/borrosa-fondo-gimnasio-fitness-concepto-ejercicio-fitness-banner_36325-905.jpg');
+}
+
+.example-card { 
+    max-width: 400px;
+  }
+  
+  .example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+}
+
+

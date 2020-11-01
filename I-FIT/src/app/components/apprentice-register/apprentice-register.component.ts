@@ -85,8 +85,8 @@ export class ApprenticeRegisterComponent implements OnInit {
   }
 
   redirectInitOrRegister(){
-    if(this.user.password = 'undefined'){
-      this.router.navigate(['search']);
+    if (this.user.document === 111){
+      this.router.navigate(['register']);
       console.log('enviando a registro');
     }else{
       this.router.navigate(['init']);
