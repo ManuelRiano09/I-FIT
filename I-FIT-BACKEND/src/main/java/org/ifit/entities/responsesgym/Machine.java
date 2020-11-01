@@ -1,4 +1,4 @@
-package org.i_fit.entities.responsesgym;
+package org.ifit.entities.responsesgym;
 
 import lombok.Data;
 import org.springframework.data.annotation.Id;

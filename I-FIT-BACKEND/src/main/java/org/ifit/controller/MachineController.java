@@ -1,7 +1,7 @@
-package org.i_fit.controller;
+package org.ifit.controller;
 
-import org.i_fit.entities.responsesgym.Machine;
-import org.i_fit.services.MachineService;
+import org.ifit.entities.responsesgym.Machine;
+import org.ifit.services.MachineService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;

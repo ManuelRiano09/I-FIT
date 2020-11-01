@@ -1,6 +1,6 @@
-package org.i_fit.repositorybd;
+package org.ifit.repositorybd;
 
-import org.i_fit.entities.responsesgym.Apprentice;
+import org.ifit.entities.responsesgym.Apprentice;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 public interface ApprenticeReposiroty extends MongoRepository<Apprentice, String> {

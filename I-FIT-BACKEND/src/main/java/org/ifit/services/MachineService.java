@@ -1,7 +1,7 @@
-package org.i_fit.services;
+package org.ifit.services;
 
-import org.i_fit.entities.responsesgym.Machine;
-import org.i_fit.repositorybd.MachineRepository;
+import org.ifit.entities.responsesgym.Machine;
+import org.ifit.repositorybd.MachineRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

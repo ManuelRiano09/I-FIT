@@ -1,10 +1,10 @@
-package org.i_fit.controller;
+package org.ifit.controller;
 
 
-import org.i_fit.entities.responsesgym.Apprentice;
-import org.i_fit.entities.responsesgym.Routine;
-import org.i_fit.entities.responsesgym.Status;
-import org.i_fit.services.LoginService;
+import org.ifit.entities.responsesgym.Apprentice;
+import org.ifit.entities.responsesgym.Routine;
+import org.ifit.entities.responsesgym.Status;
+import org.ifit.services.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;

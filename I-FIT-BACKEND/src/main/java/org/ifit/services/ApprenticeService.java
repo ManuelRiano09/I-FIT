@@ -1,6 +1,6 @@
-package org.i_fit.services;
+package org.ifit.services;
 
-import org.i_fit.entities.responsesgym.Apprentice;
+import org.ifit.entities.responsesgym.Apprentice;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;

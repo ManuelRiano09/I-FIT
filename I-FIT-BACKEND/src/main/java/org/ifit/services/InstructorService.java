@@ -1,12 +1,12 @@
-package org.i_fit.services;
+package org.ifit.services;
 
-import org.i_fit.entities.responseserror.NotFoundJourney;
-import org.i_fit.entities.responsesgym.Apprentice;
-import org.i_fit.entities.responsesgym.Exercise;
-import org.i_fit.entities.responsesgym.Journey;
-import org.i_fit.entities.responsesgym.Routine;
-import org.i_fit.entities.responsesgym.Status;
-import org.i_fit.repositorybd.ApprenticeReposiroty;
+import org.ifit.entities.responseserror.NotFoundJourney;
+import org.ifit.entities.responsesgym.Apprentice;
+import org.ifit.entities.responsesgym.Exercise;
+import org.ifit.entities.responsesgym.Journey;
+import org.ifit.entities.responsesgym.Routine;
+import org.ifit.entities.responsesgym.Status;
+import org.ifit.repositorybd.ApprenticeReposiroty;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -71,7 +71,7 @@ public class InstructorService extends MainService {
 
             return exerciseList;
         }catch (Exception e){
-            return new ArrayList<Exercise>();
+            return new ArrayList<>();
         }
 
 

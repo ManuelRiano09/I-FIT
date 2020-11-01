@@ -1,10 +1,10 @@
-package org.i_fit.services;
+package org.ifit.services;
 
-import org.i_fit.entities.responsesgym.Apprentice;
-import org.i_fit.repositorybd.ApprenticeReposiroty;
+import org.ifit.entities.responsesgym.Apprentice;
+import org.ifit.repositorybd.ApprenticeReposiroty;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class MainService {
@@ -14,13 +14,13 @@ public class MainService {
 
     protected List<Apprentice> getAllBdDataInNameOrder() {
         List<Apprentice> orderList = apprenticeReposiroty.findAll();
-        Collections.sort(orderList, ((apprentice, apprentice2) -> apprentice.getName().compareToIgnoreCase(apprentice2.getName())));
+        orderList.sort(((apprentice, apprentice2) -> apprentice.getName().compareToIgnoreCase(apprentice2.getName())));
         return orderList;
     }
 
     protected List<Apprentice> getAllBdDataInDocumentOrder() {
         List<Apprentice> orderList = apprenticeReposiroty.findAll();
-        Collections.sort(orderList, ((apprentice, apprentice2) -> apprentice.getDocument().compareTo(apprentice2.getDocument())));
+        orderList.sort((Comparator.comparing(Apprentice::getDocument)));
         return orderList;
     }
 }

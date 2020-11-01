@@ -1,4 +1,4 @@
-package org.i_fit;
+package org.ifit;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

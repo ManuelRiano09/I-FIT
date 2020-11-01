@@ -1,4 +1,4 @@
-package org.i_fit;
+package org.ifit;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

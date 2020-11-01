@@ -1,4 +1,4 @@
-package org.i_fit.entities.responsesgym;
+package org.ifit.entities.responsesgym;
 
 public class Status {
 

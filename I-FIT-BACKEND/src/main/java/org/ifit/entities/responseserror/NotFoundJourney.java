@@ -1,6 +1,6 @@
-package org.i_fit.entities.responseserror;
+package org.ifit.entities.responseserror;
 
-import org.i_fit.entities.responsesgym.Apprentice;
+import org.ifit.entities.responsesgym.Apprentice;
 
 import java.util.ArrayList;
 import java.util.List;
