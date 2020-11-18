@@ -25,6 +25,7 @@ import { BannerComponent } from './components/banner/banner.component';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import {MatIconModule} from '@angular/material/icon';
+import { MachineInstructorComponent } from './components/machine-instructor/machine-instructor.component';
 
 
 @NgModule({
@@ -40,6 +41,7 @@ import {MatIconModule} from '@angular/material/icon';
     ApprenticeRegisterComponent,
     RegisterComponent,
     BannerComponent,
+    MachineInstructorComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,67 @@
+<app-nav></app-nav>
+
+
+<div id="all">
+    <div class="container-fluid" style="background-color: rgb(0, 0, 0); padding: 40px;">
+        <h1>Maquinas</h1>
+        <div class="container-fluid" style="margin-top: 50px;">
+
+            <div class="row">
+                <div class="col-8">
+                    <h4 style=" text-align: center; ">
+                        <img style="width: 60%;"
+                        src="https://estaticos.marie-claire.es/media/cache/1000x_thumb/uploads/images/gallery/55f1a4c115aacafd30330b9f/portada_0.jpg" alt="..." class="img-thumbnail">
+                       </h4>
+                </div>
+                <div class="col-4" style="margin-top: 40px; color: white;">
+                    <h3>
+                        Conoce la maquinaria dentro del campus
+                    </h3>
+                </div>
+              </div>
+           
+ 
+
+        </div>
+    </div>
+<div class="container">
+<mat-card *ngFor="let machine of machines" class="example-card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>{{machine.name}}</mat-card-title>
+
+    </mat-card-header>
+    <iframe style="margin-top: 20px;" width="300" height="215" src="https://www.youtube.com/embed/q1f-etrzoyE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <mat-card-content>
+      <h4 style="margin-top: 20px;">
+        {{machine.description}}
+      </h4>
+    </mat-card-content>
+
+  </mat-card>
+</div>
+</div>
+
+
+<app-footer></app-footer>
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  

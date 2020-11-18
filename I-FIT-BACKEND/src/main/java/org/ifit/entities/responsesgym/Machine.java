@@ -10,6 +10,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Machine {
 
     @Id
+    private String id;
     private String name;
     private String description;
+    private String url;
 }

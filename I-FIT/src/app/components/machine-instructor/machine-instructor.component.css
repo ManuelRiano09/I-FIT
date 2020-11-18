@@ -1,0 +1,24 @@
+#all h1{
+
+    color: #FF7906;
+    font-family: 'Anton', sans-serif;
+    font-size: 60px;
+    margin-left: 3vw;
+    text-align: center;
+}
+
+.example-card {
+    background:linear-gradient(30deg, rgb(220, 127, 20),rgb(238, 105, 44), rgb(225, 209, 65), rgb(240, 152, 37), rgb(253, 249, 9));
+    margin-top: 30px;
+    margin-left: 30px;
+    max-width: 340px;
+    display:inline-table;
+    height: 550px;
+    text-align: center;
+
+  }
+  
+.example-header-image {
+    background-image: url('../../../assets/images/logo.png');
+    background-size: cover;
+  }
