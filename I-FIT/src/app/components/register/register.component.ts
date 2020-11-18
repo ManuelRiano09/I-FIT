@@ -1,5 +1,6 @@
 import { isDefined } from '@angular/compiler/src/util';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Apprentice } from 'src/app/Modelo/Apprentice';
 import { LoginServiceService } from 'src/app/Service/login-service.service';
 import Swal from 'sweetalert2';
@@ -14,7 +15,7 @@ export class RegisterComponent implements OnInit {
   apprentice: Apprentice = new Apprentice();
   emptyData = false;
 
-  constructor(private service: LoginServiceService) { }
+  constructor(private service: LoginServiceService, private router: Router) { }
 
   ngOnInit(): void {
     this.welcome();
@@ -65,6 +66,7 @@ export class RegisterComponent implements OnInit {
       this.emptyData = true;
     }else{
       this.updateUser();
+      this.router.navigate(['init']);
     }
     console.log(this.apprentice);
   }

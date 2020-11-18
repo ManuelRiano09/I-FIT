@@ -26,6 +26,8 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import {MatIconModule} from '@angular/material/icon';
 import { MachineInstructorComponent } from './components/machine-instructor/machine-instructor.component';
+import { LoginInstructorComponent } from './components/login-instructor/login-instructor.component';
+
 
 
 @NgModule({
@@ -42,6 +44,7 @@ import { MachineInstructorComponent } from './components/machine-instructor/mach
     RegisterComponent,
     BannerComponent,
     MachineInstructorComponent,
+    LoginInstructorComponent,
   ],
   imports: [
     BrowserModule,
@@ -54,6 +57,7 @@ import { MachineInstructorComponent } from './components/machine-instructor/mach
     MatButtonModule,
     MatCardModule,
     MatIconModule
+
   ],
   providers: [ServiceService],
   bootstrap: [AppComponent]

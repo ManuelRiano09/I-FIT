@@ -1,20 +1,48 @@
-#all h1{
-
-    color: #FF7906;
-    font-family: 'Anton', sans-serif;
-    font-size: 60px;
-    margin-left: 3vw;
-    text-align: center;
+.todo{
+    background-color:rgb(241, 239, 239);
 }
 
+
+#sectionMaquinas{
+    background-image: url("https://images.unsplash.com/photo-1540497077202-7c8a3999166f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80");
+    height: 60%;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    margin: 0!important;
+}
+
+#sectionMaquinas::before{
+    content: '';
+    display: block;
+    background: inherit;
+    position: absolute;
+    width: 100%; height: 100%;
+    left: 0; top: 0;
+    filter: blur(3px);
+    transform: scale(1.2,1.4);
+}
+
+#titulo{
+    font-family: 'Anton', sans-serif;
+    letter-spacing: 1px;
+    font-size: 4rem;
+    color: #FF7906;
+    margin-bottom: 25px;
+}
+
+
 .example-card {
-    background:linear-gradient(30deg, rgb(220, 127, 20),rgb(238, 105, 44), rgb(225, 209, 65), rgb(240, 152, 37), rgb(253, 249, 9));
-    margin-top: 30px;
-    margin-left: 30px;
-    max-width: 340px;
+    background-color: white;
+    margin-top: 70px;
+    margin-left: 80px;
+    max-width: 370px;
     display:inline-table;
     height: 550px;
     text-align: center;
+    
 
   }
   

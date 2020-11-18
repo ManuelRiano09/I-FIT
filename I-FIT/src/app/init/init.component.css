@@ -41,7 +41,7 @@ hr{
 
 /* VIDEO */
 .video > .row{
-    width: 100%;
+    width: 90%;
 }
 
 .video{
@@ -62,7 +62,7 @@ hr{
     }
     .video > .row > .col-md-6 > .col > iframe{
         width: 100%;
-        height: 150px;
+        height: 170px;
         margin-left: 15px;
         margin-top: -40px;
     }

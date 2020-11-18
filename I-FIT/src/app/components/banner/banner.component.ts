@@ -16,4 +16,14 @@ export class BannerComponent implements OnInit {
   login(){
     this.router.navigate(['login']);
   }
+
+  machines(){
+    this.router.navigate(['machines']);
+  }
+
+  search(){
+    this.router.navigate(['search']);
+  }
+
+
 }

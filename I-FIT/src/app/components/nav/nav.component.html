@@ -10,44 +10,28 @@
     <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
       <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
         <li class="nav-item active">
-          <a class="nav-link" ><h1>I -FIT</h1> <span class="sr-only">(current)</span></a>
+          <a class="nav-link"(click)="Init()" ><h1>I -FIT</h1> <span class="sr-only">(current)</span></a>
         </li>
 
-        <li class="nav-item ">
-          <a class="nav-link" (click)="Init()"><h5>Inicio</h5> <span class="sr-only">(current)</span></a>
-        </li>
-
-        <li class="nav-item ">
-          <a class="nav-link" ><h1>|</h1> <span class="sr-only">(current)</span></a>
-        </li>
-
+  
         <li class="nav-item ">
           <a class="nav-link" ><h5>Alimentacion</h5> <span class="sr-only">(current)</span></a>
         </li>
 
-        <li class="nav-item ">
-          <a class="nav-link" ><h1>|</h1> <span class="sr-only">(current)</span></a>
-        </li>
+        
 
         <li class="nav-item ">
           <a class="nav-link" ><h5>Mis rutinas</h5> <span class="sr-only">(current)</span></a>
         </li>
 
-        <li class="nav-item ">
-          <a class="nav-link" ><h1>|</h1> <span class="sr-only">(current)</span></a>
-        </li>
+        
 
         <li class="nav-item ">
-          <a class="nav-link" ><h5>Maquinas</h5> <span class="sr-only">(current)</span></a>
+          <a class="nav-link" (click)="Machines()"><h5>Maquinas</h5> <span class="sr-only">(current)</span></a>
         </li>
 
-        <li class="nav-item ">
-          <a class="nav-link" ><h1>|</h1> <span class="sr-only">(current)</span></a>
-        </li>
+        
 
-        <li class="nav-item ">
-          <a (click)="Search()" class="nav-link" ><h5>Aprendices</h5> <span class="sr-only">(current)</span></a>
-        </li>
         
       </ul>
       <form class="form-inline my-2 my-lg-0">

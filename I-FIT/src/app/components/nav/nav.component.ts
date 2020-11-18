@@ -27,4 +27,8 @@ export class NavComponent{
     this.router.navigate(['login']);
   }
 
+  Machines(){
+    this.router.navigate(['machines']);
+  }
+
 }

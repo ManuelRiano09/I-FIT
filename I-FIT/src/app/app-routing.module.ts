@@ -8,6 +8,7 @@ import { TableComponent } from './table/table.component';
 import { MachineInstructorComponent} from './components/machine-instructor/machine-instructor.component';
 import { ApprenticeRegisterComponent } from './components/apprentice-register/apprentice-register.component';
 import { RegisterComponent } from './components/register/register.component'
+import { LoginInstructorComponent} from './components/login-instructor/login-instructor.component';
 import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
 
@@ -24,7 +25,8 @@ const routes: Routes = [
   {path: 'table', component: TableComponent},
   {path: 'login', component: ApprenticeRegisterComponent},
   {path: 'register', component: RegisterComponent},
-  {path: 'machines', component: MachineInstructorComponent}
+  {path: 'machines', component: MachineInstructorComponent},
+  {path: 'loginInstructor', component: LoginInstructorComponent}
 ];
 
 @NgModule({

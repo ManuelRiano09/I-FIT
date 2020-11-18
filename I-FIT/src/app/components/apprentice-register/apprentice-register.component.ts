@@ -112,5 +112,9 @@ export class ApprenticeRegisterComponent implements OnInit {
 
     })
   }
+
+  loginAsInstructor(){
+    this.router.navigate(['loginInstructor']);
+  }
 }
 
