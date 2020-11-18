@@ -1,8 +1,44 @@
 <app-nav></app-nav>
 
-<h1 id="titulo"> Listado de aprendices </h1>
+<h1 id="titulo">Aprendices </h1>
+
+<div class="filter" style="text-align: center; background-color: whitesmoke; margin-top: 40px;">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm">
+        <br>
+        Todos
+        <br><br><br>
+        <button  (click)="allApprentices()" mat-fab flex="70"  color="accent" class="materialButton">
+          <mat-icon>all_inclusive</mat-icon>
+        </button>
+        <br>
+      </div>
+      <div class="col-sm">
+        <br>
+        Finalizadas
+        <br><br><br>
+        <button  (click)="notFinishedApprentices()" mat-fab flex="70"  color="accent" class="materialButton">
+          <mat-icon>fitness_center</mat-icon>
+        </button>
+        <br>
+      </div>
+      <div class="col-sm">
+        <br>
+        Nuevos
+        <br><br><br>
+        <button (click)="newApprentices()" mat-fab flex="70"  color="accent" class="materialButton">
+          <mat-icon>fiber_new</mat-icon>
+        </button>
+        <br>
+      </div>
+    </div>
+  </div>
+</div>
 
 <div class="container" id="principal" style="margin-top: 35px;">
+
+  
 
   <nav aria-label="breadcrumb">
     
@@ -16,12 +52,14 @@
 
 <div class="container" id="table">
 
+  <!--
   <div class="input-group flex-nowrap">
     <div class="input-group-prepend">
       <span class="input-group-text" id="addon-wrapping">#</span>
     </div>
     <input type="text" (keyup)="filtrar($event)" class="form-control" placeholder="Documento" aria-label="Username" aria-describedby="addon-wrapping">
   </div>
+  -->
 
 
 <p>{{searchDocument}}</p>  

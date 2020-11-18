@@ -1,0 +1,44 @@
+<app-nav></app-nav>
+<body>
+    
+<div class="todo">
+<div class="position-relative p-3 p-md-5 m-md-3 text-center bg-light" id="sectionMaquinas">
+    <div class="col-md-5 p-lg-5 mx-auto my-5">
+        <h1 class="display-4" id="titulo">Maquinas</h1>
+        <hr style="border-width: 2px; background-color: #FF7906;">
+        <!-- <p class="lead">
+          El gimnasio del Centro de Industria y Construcción cuenta
+          con las mas completas maquinas para trabajar cada musculo del cuerpo.
+      </p> -->
+        <!-- <a class="btn" href="#maquinas">Ver Maquinas</a> -->
+    </div>
+</div>
+
+
+
+
+<div id="all">
+
+    <div class="container-fluid">
+        <mat-card *ngFor="let machine of machines" class="example-card">
+            <mat-card-header>
+                <div mat-card-avatar class="example-header-image"></div>
+                <mat-card-title>{{machine.name}}</mat-card-title>
+
+            </mat-card-header>
+            <iframe style="margin-top: 20px;" width="300" height="215" src="https://www.youtube.com/embed/q1f-etrzoyE"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+            <mat-card-content>
+                <h4 style="margin-top: 20px;">
+                    {{machine.description}}
+                </h4>
+            </mat-card-content>
+
+        </mat-card>
+    </div>
+</div>
+</div>
+
+<app-footer></app-footer>

@@ -12,9 +12,6 @@ import { Exercise } from '../Modelo/Exercise';
 })
 export class ServiceService {
 
-
-
-
   constructor(private http: HttpClient ) {
   }
 

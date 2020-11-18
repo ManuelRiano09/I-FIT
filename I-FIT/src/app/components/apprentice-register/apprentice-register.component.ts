@@ -85,8 +85,8 @@ export class ApprenticeRegisterComponent implements OnInit {
   }
 
   redirectInitOrRegister(){
-    if(this.user.password = 'undefined'){
-      this.router.navigate(['search']);
+    if (this.user.document === 111){
+      this.router.navigate(['register']);
       console.log('enviando a registro');
     }else{
       this.router.navigate(['init']);
@@ -111,6 +111,10 @@ export class ApprenticeRegisterComponent implements OnInit {
       text: 'Debido a las politicas de seguridad entre el servicio nacional de aprendizaje Sena junto a I-FIT, el acceso solo esta permitido con la cuenta institucional',
 
     })
+  }
+
+  loginAsInstructor(){
+    this.router.navigate(['loginInstructor']);
   }
 }
 

@@ -1,0 +1,47 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+<body>
+	<header>
+        <a  class="logo"> <img src="../../../assets/images/logo.png" style="width: 20%;"></a>
+		<ul class="nav justify-content-center">
+			<li class="nav-item" style="color: white;">
+			  <a class="nav-link active" style="color: white; font-size: large;">Alimentos</a>
+			</li>
+			<li class="nav-item">
+			  <a class="nav-link" style="color: white;font-size: large;">Rutinas</a>
+			</li>
+			<li class="nav-item">
+			  <a class="nav-link"  (click)="machines()" style="color: white;font-size: large;">Maquinas</a>
+			</li>
+			<li class="nav-item">
+				<button  (click)="login()" mat-mini-fab flex="70"  color="accent" class="materialButton" >
+					<mat-icon>account_box</mat-icon>
+				  </button>
+			</li>
+		  </ul>
+		<div class="toggle">     
+        </div>
+	</header>
+	<div class="banner">
+		<video src="../../../assets/videos/gym.mp4" autoplay muted loop type="mp4"></video>
+		<div class="textBox">
+			<h3>I-FIT</h3>
+			<p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis modi fuga, maxime neque odio facere quaerat ducimus nesciunt quis qui quam minima consequatur, accusamus a? Alias voluptatem nobis veritatis corrupti.
+            </p>
+            
+
+           
+			<a (click)="login()">Ingresa ya!</a>
+			<a style="margin-left: 5px;" (click)="search()">Aprendices</a>
+		</div>
+		<div class="imgBox">
+			<img src="https://scitecnutrition.com.mx/wp-content/uploads/2016/06/team_scitec_jose_almeida.png">
+		</div>
+		<ul class="sci">
+			<li><a href=""></a></li>
+			<li><a href=""></a></li>
+			<li><a href=""></a></li>
+		</ul>
+	</div>
+</body>

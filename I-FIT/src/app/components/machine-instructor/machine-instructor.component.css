@@ -1,0 +1,52 @@
+.todo{
+    background-color:rgb(241, 239, 239);
+}
+
+
+#sectionMaquinas{
+    background-image: url("https://images.unsplash.com/photo-1540497077202-7c8a3999166f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80");
+    height: 60%;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    margin: 0!important;
+}
+
+#sectionMaquinas::before{
+    content: '';
+    display: block;
+    background: inherit;
+    position: absolute;
+    width: 100%; height: 100%;
+    left: 0; top: 0;
+    filter: blur(3px);
+    transform: scale(1.2,1.4);
+}
+
+#titulo{
+    font-family: 'Anton', sans-serif;
+    letter-spacing: 1px;
+    font-size: 4rem;
+    color: #FF7906;
+    margin-bottom: 25px;
+}
+
+
+.example-card {
+    background-color: white;
+    margin-top: 70px;
+    margin-left: 80px;
+    max-width: 370px;
+    display:inline-table;
+    height: 550px;
+    text-align: center;
+    
+
+  }
+  
+.example-header-image {
+    background-image: url('../../../assets/images/logo.png');
+    background-size: cover;
+  }

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+
+	<div class="container-contact100">
+		<div class="wrap-contact100">
+			<form class="contact100-form validate-form" style="margin-top: -30px;">
+				<span class="contact100-form-title" style="color: #FF7906;;">
+					Registrate
+				</span>
+
+				<div class="wrap-input100 validate-input" data-validate="Name is required">
+					<label class="label-input100">Documento (*)</label>
+					<input class="input100" type="number" placeholder="Ingresa tu documento..." id="document" >
+					<span class="focus-input100"></span>
+                </div>
+                
+
+				<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+					<label class="label-input100" >Estatura (*)</label>
+					<input class="input100" type="number"  placeholder="Ingresa tu estatura... ej: (1.70)" id="height">
+					<span class="focus-input100"></span>
+                </div>
+                
+                <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+					<label class="label-input100" for="email">Edad (*)</label>
+					<input  class="input100" type="number" placeholder="Ingresa tu edad..." min="16" max="50" id="age">
+					<span class="focus-input100"></span>
+                </div>
+
+                <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+					<label class="label-input100" for="email">Peso (*)</label>
+					<input  class="input100" type="number"  placeholder="Ingresa tu peso en kg..." id="weight">
+					<span class="focus-input100"></span>
+                </div>
+				
+                
+                
+
+				<div class="wrap-input100 validate-input" data-validate = "Message is required">
+					<label class="label-input100" for="message">Comentarios</label>
+					<textarea id="comments" class="input100" name="message" placeholder="¿Quieres hacerle saber algo a tu instructor?"></textarea>
+					<span class="focus-input100"></span>
+                </div>
+                
+                <div class="wrap-input100 validate-input" data-validate = "Message is required">
+					<label class="label-input100" for="message">Impedimentos</label>
+					<textarea id="limitations" class="input100" name="message" placeholder="¿Tienes algun inpedimento a la hora de hacer ejercicio?"></textarea>
+					<span class="focus-input100"></span>
+                </div>
+                
+                <div class="wrap-input100">
+                    <div class="label-input100">Jornada</div>
+                    <br>
+					<div>
+						<select class="js-select2" aria-placeholder="jornada" class="form-control form-control-mg" name="service" (change)="journey($event)">
+                            <option disabled selected> Ingresa tu jornada... *</option>
+							<option value="MORNING">Mañana</option>
+							<option value="AFTERNOON">Tarde</option>
+							<option value="NIGHT">Noche</option>
+							<option value="WEEKEND">Fin de semana</option>
+						</select>
+						<div class="dropDownSelect2"></div>
+					</div>
+					<span class="focus-input100"></span>
+				</div>
+				
+				
+				<p *ngIf="emptyData" style="color: red;">Debes llenar todos los datos obligatorios (*)</p>
+                
+
+
+				<div class="container-contact100-form-btn">
+					<button (click)="registerUser()" class="contact100-form-btn">
+						Send
+					</button>
+                </div>
+                
+			</form>
+
+            <div class="contact100-more flex-col-c-m" style="background-image: url('https://bodytech.com.co/uploads/post/eeaac56b16064ec7a70ff7e85a438ef9/entrenar-seguro-2.jpg');">
+                
+			</div>
+		</div>
+	</div>
+
+
+
+
+	
+</body>
+</html>
+
+
