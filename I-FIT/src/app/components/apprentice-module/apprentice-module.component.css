@@ -1,0 +1,111 @@
+                            .profile {
+                                height: 40vh;
+                                min-height: 250px;
+                                max-height: 350px;
+                            }
+                            
+                            .profile-cover {
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                                object-position: center;
+                                border-radius: 5px;
+                                opacity: 0.8;
+                            }
+                            
+                            .profile-avatar {
+                                align-items: center;
+                                display: flex;
+                                z-index: 1;
+                                bottom: 30px;
+                                left: 50px;
+                            }
+                            
+                            .profile-img {
+                                width: 180px;
+                                height: 180px;
+                                border-radius: 50%;
+                                object-fit: cover;
+                                border: 4px solid white;
+                            }
+                            
+                            .profile-info {
+                                bottom: 0;
+                                width: 100%;
+                                display: flex;
+                            }
+                            
+                            .profile-name,
+                            .profile-curse {
+                                margin-left: 20px;
+                                margin-right: 20px;
+                                font-size: xx-large;
+                                color: #fff;
+                                font-weight: 600;
+                            }
+                            
+                            .row {
+                                background-color: rgba(231, 231, 231, 0.884);
+                                border-radius: 5px;
+                            }
+                            
+                            .card-title {
+                                font-weight: bold;
+                            }
+                            
+                            span {
+                                font-weight: bold;
+                            }
+                            
+                            textarea {
+                                height: 120px;
+                            }
+                            /* Responsive */
+                            
+                            @media screen and (max-width: 700px) {
+                                .profile-img {
+                                    height: 150px;
+                                    width: 150px;
+                                }
+                                .profile-name,
+                                .profile-curse {
+                                    font-size: large;
+                                    margin-bottom: 0px;
+                                }
+                            }
+                            
+                            @media screen and (max-width: 411px) {
+                                .profile-avatar {
+                                    top: 18%;
+                                    transform: translatex(13%);
+                                    align-items: center;
+                                    flex-direction: column;
+                                    justify-content: center;
+                                }
+                                .profile-info {
+                                    align-items: center;
+                                    flex-direction: column;
+                                    justify-content: center;
+                                }
+                                .profile-img {
+                                    height: 180px;
+                                    width: 180px;
+                                }
+                                .profile-name,
+                                .profile-curse {
+                                    font-size: large;
+                                    margin-bottom: 0px;
+                                }
+                            }
+                            
+                            @media screen and (max-width: 360px) {
+                                .profile-avatar {
+                                    top: 18%;
+                                    transform: translatex(3%);
+                                }
+                                .profile-name,
+                                .profile-curse {
+                                    font-size: large;
+                                    margin-bottom: 0px;
+                                }
+                            }

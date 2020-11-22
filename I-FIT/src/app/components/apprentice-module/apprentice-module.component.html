@@ -1,0 +1,52 @@
+<app-nav></app-nav>
+<div class="profile position-relative">
+    <div class="profile-avatar position-absolute">
+        <img src="https://images.unsplash.com/photo-1534368575702-7c65b7474f91?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" alt="" class="profile-img">
+        <div class="profile-info" *ngFor="let aprendiz of aprendiz">
+            <h1 class="profile-name">{{ aprendiz.nombre }}</h1>
+            <h2 class="profile-curse"><small>Ficha: {{ aprendiz.ficha }}</small> </h2>
+        </div>
+    </div>
+    <img class=" profile-cover position-absolute " src="https://images.pexels.com/photos/685530/pexels-photo-685530.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" alt=" ">
+</div>
+
+<div class="container mt-3">
+    <div class="row  mb-3 p-3">
+        <div class="col">
+            <button class="btn btn-outline-success btn-block" (click)=" mostrar = !mostrar ">Ver Rutina</button>
+            <div class="mt-3">
+                <ul class="list-group list-group-flush" *ngIf="mostrar">
+                    <li *ngFor="let rutina of rutinas" class="list-group-item ">
+                        {{ rutina.ejercicio }}
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col">
+            <form action="">
+                <div class="form-group">
+                    <label class="col-form-label-lg" for="formGroupExampleInput"><span>Comentarios:</span></label>
+                    <textarea class="form-control" name="comentarios" placeholder="Cometario Sobre la Rutina"></textarea>
+                </div>
+                <button class="btn btn-primary btn-block" type=" submit ">Enviar</button>
+            </form>
+        </div>
+    </div>
+    <hr>
+    <img src="../../../assets//images/bannerRutines.jpg " class="img-fluid " alt="Responsive image ">
+    <hr>
+    <div class="card-columns mt-3 ">
+        <div class="card " *ngFor="let rutina of rutinas ">
+            <div class="card-body ">
+                <h1 class="card-title ">{{ rutina.ejercicio }}</h1>
+                <h3 class="card-text ">{{ rutina.descripcion }}</h3>
+                <h3 class="card-text ">
+                    <span>Series:</span> {{ rutina.series }} <span>Repeticiones:</span> x{{ rutina.repeticiones }}
+                </h3>
+                <h3 class="card-text ">
+                    <span>Maquina:</span> {{ rutina.maquina }}</h3>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

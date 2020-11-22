@@ -27,6 +27,9 @@ import {MatCardModule} from '@angular/material/card';
 import {MatIconModule} from '@angular/material/icon';
 import { MachineInstructorComponent } from './components/machine-instructor/machine-instructor.component';
 import { LoginInstructorComponent } from './components/login-instructor/login-instructor.component';
+import { ApprenticeModuleComponent } from './components/apprentice-module/apprentice-module.component';
+/* Service */
+import { ApprenticeServices } from './Service/apprentice-rutines.service';
 
 
 
@@ -45,6 +48,7 @@ import { LoginInstructorComponent } from './components/login-instructor/login-in
     BannerComponent,
     MachineInstructorComponent,
     LoginInstructorComponent,
+    ApprenticeModuleComponent,
   ],
   imports: [
     BrowserModule,
@@ -59,7 +63,9 @@ import { LoginInstructorComponent } from './components/login-instructor/login-in
     MatIconModule
 
   ],
-  providers: [ServiceService],
+  providers: [
+    ServiceService,
+    ApprenticeServices],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

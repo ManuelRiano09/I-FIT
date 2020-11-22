@@ -1,5 +1,6 @@
 import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+/* Componentes */
 import { SearchComponent } from './routines/search/search.component';
 import { AddComponent } from './routines/add/add.component';
 import { EditComponent } from './routines/edit/edit.component';
@@ -9,6 +10,9 @@ import { MachineInstructorComponent} from './components/machine-instructor/machi
 import { ApprenticeRegisterComponent } from './components/apprentice-register/apprentice-register.component';
 import { RegisterComponent } from './components/register/register.component'
 import { LoginInstructorComponent} from './components/login-instructor/login-instructor.component';
+import { ApprenticeModuleComponent } from './components/apprentice-module/apprentice-module.component';
+
+/* Fire Base */
 import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
 
@@ -26,7 +30,8 @@ const routes: Routes = [
   {path: 'login', component: ApprenticeRegisterComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'machines', component: MachineInstructorComponent},
-  {path: 'loginInstructor', component: LoginInstructorComponent}
+  {path: 'loginInstructor', component: LoginInstructorComponent},
+  {path: 'apprentice', component: ApprenticeModuleComponent}
 ];
 
 @NgModule({
